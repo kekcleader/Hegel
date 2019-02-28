@@ -136,8 +136,8 @@
 %  \textsuperscript{(}\oldpagenote{#1}\textsuperscript{)}}
 
 \let\oldpagenote\pagenote%
-  \renewcommand{\pagenote}[2]{%
-  \textsuperscript{(}\oldpagenote{#1}{#2}\textsuperscript{)}}
+  \renewcommand{\pagenote}[1]{%
+  \textsuperscript{(}\oldpagenote{#1}\textsuperscript{)}}
 
 \renewcommand{\noteidinnotes}[2]{%
   \textsuperscript{#1}~~}
@@ -241,7 +241,6 @@
 
 
 \part*{Третий отдел. Мера.}
-
 \chapter*{Первая глава. Специфическое количество.}
 \input{131_specificheskoe_kolichestvo.tex}
 
