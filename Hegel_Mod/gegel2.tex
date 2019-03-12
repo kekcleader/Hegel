@@ -4,10 +4,11 @@
 %%%------------------------------------------------------------------------
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[greek,english,main=russian]{babel}
 \usepackage[final]{microtype} % Less badboxes
 \usepackage{bookmark}
+\usepackage{footnotehyper}
 \usepackage{multicol}
 
 % \usepackage{kpfonts} %Font
@@ -126,6 +127,21 @@
 \pagestyle{standard}               % Choosing pagestyle and chapter pagestyle
 \aliaspagestyle{chapter}{chap} %
 
+%%% END NOTES
+%%%------------------------------------------------------------------------
+\makepagenote
+\continuousnotenums
+\notepageref
+
+\let\oldpagenote\pagenote%
+  \renewcommand{\pagenote}[1]{%
+  \textsuperscript{(}\oldpagenote{#1}\textsuperscript{)}}
+
+\renewcommand{\noteidinnotes}[2]{%
+  \textsuperscript{#1}~~}
+\renewcommand{\pageinnotes}[1]{%
+  К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
+
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
 
@@ -170,9 +186,9 @@
   \vspace{130pt}
   \textbf{\Huge НАУКА ЛОГИКИ} \\
   \vspace{12pt}
-  {\Large Том~I. Объективная логика} \\
+  {\Large Том~II. Субъективная логика} \\
   \vspace{8pt}
-  {\large Книга~II. Учение о сущности} \\
+  {\large Книга~III. Учение о понятии} \\
   \vspace{45pt}
   \textit{перевод} \\
   \textit{Б.~Г.~СТОЛПНЕРА} \\
