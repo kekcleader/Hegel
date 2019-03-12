@@ -1,4 +1,4 @@
-\pagenotesubheadstarred{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{}{\IeC {\CYRG }\IeC {\cyre }\IeC {\cyrg }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyrsftsn } 2.}
+\pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{1}{\IeC {\CYRP }\IeC {\cyrr }\IeC {\cyre }\IeC {\cyrd }\IeC {\cyri }\IeC {\cyrs }\IeC {\cyrl }\IeC {\cyro }\IeC {\cyrv }\IeC {\cyri }\IeC {\cyre }}
 \startnoteentry{1}
 {}
 {pagenote1-3}
@@ -287,7 +287,7 @@ S.
 7-я.\label
 {bkm:bm02}
 \endnoteentry
-\pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{1}{\IeC {\CYRO } \IeC {\cyrp }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrya }\IeC {\cyrt }\IeC {\cyri }\IeC {\cyri } \IeC {\cyrv }\IeC {\cyro }\IeC {\cyro }\IeC {\cyrb }\IeC {\cyrshch }\IeC {\cyre }}
+\pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{2}{\IeC {\CYRO } \IeC {\cyrp }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrya }\IeC {\cyrt }\IeC {\cyri }\IeC {\cyri } \IeC {\cyrv }\IeC {\cyro }\IeC {\cyro }\IeC {\cyrb }\IeC {\cyrshch }\IeC {\cyre }}
 \startnoteentry{3}
 {}
 {pagenote3-7}
@@ -968,7 +968,6 @@ S.
 стр.~100).\label
 {bkm:bm12}
 \endnoteentry
-\pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{2}{\IeC {\CYRP }\IeC {\cyro }\IeC {\cyrd }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrz }\IeC {\cyrd }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}
 \startnoteentry{13}
 {}
 {pagenote13-25}
@@ -1083,7 +1082,7 @@ An-und-fursichsein
 ist>>.\label
 {bkm:bm13}
 \endnoteentry
-\pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{3}{\IeC {\CYRP }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyrv }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRP }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrya }\IeC {\cyrt }\IeC {\cyri }\IeC {\cyre }}
+\pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{3}{{\protect \em  \IeC {\CYRP }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyrv }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra }} \IeC {\CYRP }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrya }\IeC {\cyrt }\IeC {\cyri }\IeC {\cyre }}
 \startnoteentry{14}
 {}
 {pagenote14-30}
@@ -2412,7 +2411,7 @@ Begriffes),
 \endnoteentry
 \startnoteentry{40}
 {}
-{pagenote40-88}
+{pagenote40-89}
 {Hpagenote.40}
 Это
 ---
@@ -2441,7 +2440,7 @@ Begriffes),
 \endnoteentry
 \startnoteentry{41}
 {}
-{pagenote41-88}
+{pagenote41-89}
 {Hpagenote.41}
 Гегель
 имеет
@@ -2597,7 +2596,7 @@ S.
 \endnoteentry
 \startnoteentry{42}
 {}
-{pagenote42-88}
+{pagenote42-89}
 {Hpagenote.42}
 В
 немецкой
@@ -2651,7 +2650,7 @@ eine>>
 \endnoteentry
 \startnoteentry{43}
 {}
-{pagenote43-88}
+{pagenote43-89}
 {Hpagenote.43}
 Согласно
 гете-гегелевской
@@ -2706,7 +2705,7 @@ eine>>
 \endnoteentry
 \startnoteentry{44}
 {}
-{pagenote44-88}
+{pagenote44-89}
 {Hpagenote.44}
 Это
 опять
@@ -2818,7 +2817,7 @@ eine>>
 \endnoteentry
 \startnoteentry{46}
 {}
-{pagenote46-96}
+{pagenote46-97}
 {Hpagenote.46}
 Немецкое
 слово
@@ -3059,7 +3058,7 @@ Schluss>>
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{5}{\IeC {\CYRT }\IeC {\cyrr }\IeC {\cyre }\IeC {\cyrt }\IeC {\cyrsftsn }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRU }\IeC {\cyrm }\IeC {\cyro }\IeC {\cyrz }\IeC {\cyra }\IeC {\cyrk }\IeC {\cyrl }\IeC {\cyryu }\IeC {\cyrch }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}
 \startnoteentry{47}
 {}
-{pagenote47-97}
+{pagenote47-98}
 {Hpagenote.47}
 Под
 этим
@@ -3147,7 +3146,7 @@ Schluss>>
 \endnoteentry
 \startnoteentry{49}
 {}
-{pagenote49-100}
+{pagenote49-101}
 {Hpagenote.49}
 Т.~е.
 <<единичное
@@ -3356,7 +3355,7 @@ B
 \endnoteentry
 \startnoteentry{52}
 {}
-{pagenote52-110}
+{pagenote52-111}
 {Hpagenote.52}
 В
 этом
@@ -3856,7 +3855,7 @@ B
 \endnoteentry
 \startnoteentry{54}
 {}
-{pagenote54-113}
+{pagenote54-114}
 {Hpagenote.54}
 Опять
 намек
@@ -3981,7 +3980,7 @@ B
 \endnoteentry
 \startnoteentry{55}
 {}
-{pagenote55-117}
+{pagenote55-118}
 {Hpagenote.55}
 См.
 т.~I
@@ -3992,7 +3991,7 @@ B
 \endnoteentry
 \startnoteentry{56}
 {}
-{pagenote56-123}
+{pagenote56-124}
 {Hpagenote.56}
 См.
 примечание
@@ -4072,7 +4071,7 @@ E}>>
 \endnoteentry
 \startnoteentry{58}
 {}
-{pagenote58-127}
+{pagenote58-128}
 {Hpagenote.58}
 Ср.
 замечание
@@ -4118,7 +4117,7 @@ S.
 \endnoteentry
 \startnoteentry{59}
 {}
-{pagenote59-133}
+{pagenote59-134}
 {Hpagenote.59}
 Примером
 категорического
@@ -4154,7 +4153,7 @@ S.
 \endnoteentry
 \startnoteentry{60}
 {}
-{pagenote60-135}
+{pagenote60-136}
 {Hpagenote.60}
 Речь
 идет
@@ -4167,7 +4166,7 @@ S.
 \endnoteentry
 \startnoteentry{61}
 {}
-{pagenote61-138}
+{pagenote61-139}
 {Hpagenote.61}
 Момент
 непосредственности
@@ -4184,7 +4183,7 @@ S.
 \endnoteentry
 \startnoteentry{62}
 {}
-{pagenote62-138}
+{pagenote62-139}
 {Hpagenote.62}
 Для
 бóльшей
@@ -4254,7 +4253,7 @@ S.
 \endnoteentry
 \startnoteentry{63}
 {}
-{pagenote63-145}
+{pagenote63-146}
 {Hpagenote.63}
 Это
 намерение
@@ -4343,7 +4342,7 @@ S.
 \endnoteentry
 \startnoteentry{64}
 {}
-{pagenote64-146}
+{pagenote64-147}
 {Hpagenote.64}
 Т.~е.,
 <<так
@@ -4369,7 +4368,7 @@ S.
 \endnoteentry
 \startnoteentry{65}
 {}
-{pagenote65-146}
+{pagenote65-147}
 {Hpagenote.65}
 Т.~е.
 <<он
@@ -4392,7 +4391,7 @@ S.
 \endnoteentry
 \startnoteentry{66}
 {}
-{pagenote66-147}
+{pagenote66-148}
 {Hpagenote.66}
 См.
 выше,
@@ -4411,7 +4410,7 @@ S.
 \endnoteentry
 \startnoteentry{67}
 {}
-{pagenote67-147}
+{pagenote67-148}
 {Hpagenote.67}
 Имеется
 в
@@ -4424,7 +4423,7 @@ S.
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{6}{\IeC {\CYRP }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyrv }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRM }\IeC {\cyre }\IeC {\cyrh }\IeC {\cyra }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrz }\IeC {\cyrm }}
 \startnoteentry{68}
 {}
-{pagenote68-155}
+{pagenote68-156}
 {Hpagenote.68}
 В
 издании
@@ -4516,7 +4515,7 @@ wird>>.
 \endnoteentry
 \startnoteentry{69}
 {}
-{pagenote69-156}
+{pagenote69-157}
 {Hpagenote.69}
 Для
 иллюстрации
@@ -4606,7 +4605,7 @@ wird>>.
 \endnoteentry
 \startnoteentry{70}
 {}
-{pagenote70-157}
+{pagenote70-158}
 {Hpagenote.70}
 В
 немецком
@@ -4628,7 +4627,7 @@ ist...>>\label
 \endnoteentry
 \startnoteentry{71}
 {}
-{pagenote71-159}
+{pagenote71-161}
 {Hpagenote.71}
 Гегель
 имеет
@@ -4775,7 +4774,7 @@ S.
 \endnoteentry
 \startnoteentry{72}
 {}
-{pagenote72-160}
+{pagenote72-161}
 {Hpagenote.72}
 В
 изданиях
@@ -4816,7 +4815,7 @@ Aufheben...>>.
 \endnoteentry
 \startnoteentry{73}
 {}
-{pagenote73-161}
+{pagenote73-163}
 {Hpagenote.73}
 Как
 ни
@@ -5060,7 +5059,7 @@ Aufheben...>>.
 \endnoteentry
 \startnoteentry{74}
 {}
-{pagenote74-162}
+{pagenote74-164}
 {Hpagenote.74}
 Это
 "---
@@ -5150,7 +5149,7 @@ Aufheben...>>.
 \endnoteentry
 \startnoteentry{75}
 {}
-{pagenote75-163}
+{pagenote75-164}
 {Hpagenote.75}
 Это
 ---
@@ -5212,7 +5211,7 @@ Aeusserlichkeib>>).\label
 \endnoteentry
 \startnoteentry{76}
 {}
-{pagenote76-163}
+{pagenote76-164}
 {Hpagenote.76}
 Это
 ---
@@ -5236,7 +5235,7 @@ Aeusserlichkeib>>).\label
 \endnoteentry
 \startnoteentry{77}
 {}
-{pagenote77-163}
+{pagenote77-164}
 {Hpagenote.77}
 Здесь
 опять
@@ -5258,7 +5257,7 @@ Aeusserlichkeib>>).\label
 \endnoteentry
 \startnoteentry{78}
 {}
-{pagenote78-163}
+{pagenote78-164}
 {Hpagenote.78}
 Умозаключение
 <<третьей
@@ -5273,7 +5272,7 @@ Aeusserlichkeib>>).\label
 \endnoteentry
 \startnoteentry{79}
 {}
-{pagenote79-163}
+{pagenote79-164}
 {Hpagenote.79}
 Умозаключение
 <<второй
@@ -5287,7 +5286,7 @@ B"---
 \endnoteentry
 \startnoteentry{80}
 {}
-{pagenote80-163}
+{pagenote80-164}
 {Hpagenote.80}
 Умозаключение
 <<первой
@@ -5303,7 +5302,7 @@ B"---
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{7}{\IeC {\CYRV }\IeC {\cyrt }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRH }\IeC {\cyri }\IeC {\cyrm }\IeC {\cyri }\IeC {\cyrz }\IeC {\cyrm }}
 \startnoteentry{81}
 {}
-{pagenote81-167}
+{pagenote81-168}
 {Hpagenote.81}
 Имеется
 в
@@ -5328,7 +5327,7 @@ Wahlverwandschaften>>
 \endnoteentry
 \startnoteentry{82}
 {}
-{pagenote82-167}
+{pagenote82-169}
 {Hpagenote.82}
 Слово
 <<основание>>
@@ -5394,7 +5393,7 @@ XIX
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{8}{\IeC {\CYRT }\IeC {\cyrr }\IeC {\cyre }\IeC {\cyrt }\IeC {\cyrsftsn }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRT }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyri }\IeC {\cyrya }}
 \startnoteentry{83}
 {}
-{pagenote83-175}
+{pagenote83-176}
 {Hpagenote.83}
 Эту
 фразу
@@ -5576,7 +5575,7 @@ XVIII
 \endnoteentry
 \startnoteentry{84}
 {}
-{pagenote84-176}
+{pagenote84-177}
 {Hpagenote.84}
 Эту
 фразу
@@ -5689,7 +5688,7 @@ S.
 \endnoteentry
 \startnoteentry{85}
 {}
-{pagenote85-178}
+{pagenote85-180}
 {Hpagenote.85}
 См.
 {\em
@@ -5706,7 +5705,7 @@ S.
 \endnoteentry
 \startnoteentry{86}
 {}
-{pagenote86-197}
+{pagenote86-198}
 {Hpagenote.86}
 Гегель
 определяет
@@ -6024,7 +6023,7 @@ S.
 \endnoteentry
 \startnoteentry{87}
 {}
-{pagenote87-197}
+{pagenote87-199}
 {Hpagenote.87}
 <<Weil
 ihr
@@ -6055,7 +6054,7 @@ konne>>
 \endnoteentry
 \startnoteentry{88}
 {}
-{pagenote88-197}
+{pagenote88-199}
 {Hpagenote.88}
 Цитата
 взята
@@ -6078,7 +6077,7 @@ konne>>
 \endnoteentry
 \startnoteentry{89}
 {}
-{pagenote89-198}
+{pagenote89-199}
 {Hpagenote.89}
 <<Kongruieren>>:
 опять
@@ -6115,7 +6114,7 @@ konne>>
 \endnoteentry
 \startnoteentry{90}
 {}
-{pagenote90-200}
+{pagenote90-201}
 {Hpagenote.90}
 Выражение
 <<субъект-объект>>
@@ -6205,7 +6204,7 @@ S.
 \endnoteentry
 \startnoteentry{91}
 {}
-{pagenote91-201}
+{pagenote91-202}
 {Hpagenote.91}
 "---
 Это,
@@ -6496,7 +6495,7 @@ Bild)
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{9}{\IeC {\CYRP }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyrv }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRZH }\IeC {\cyri }\IeC {\cyrz }\IeC {\cyrn }\IeC {\cyrsftsn }}
 \startnoteentry{92}
 {}
-{pagenote92-205}
+{pagenote92-207}
 {Hpagenote.92}
 <<Das
 Urteil>>
@@ -6511,7 +6510,7 @@ Urteil>>
 \endnoteentry
 \startnoteentry{93}
 {}
-{pagenote93-207}
+{pagenote93-208}
 {Hpagenote.93}
 По
 поводу
@@ -6578,7 +6577,7 @@ Urteil>>
 \endnoteentry
 \startnoteentry{94}
 {}
-{pagenote94-209}
+{pagenote94-210}
 {Hpagenote.94}
 К
 этому
@@ -6705,7 +6704,7 @@ V
 \endnoteentry
 \startnoteentry{95}
 {}
-{pagenote95-210}
+{pagenote95-211}
 {Hpagenote.95}
 Под
 <<образом>>
@@ -6839,7 +6838,7 @@ V
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{10}{\IeC {\CYRV }\IeC {\cyrt }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRI }\IeC {\cyrd }\IeC {\cyre }\IeC {\cyrya } \IeC {\cyrp }\IeC {\cyro }\IeC {\cyrz }\IeC {\cyrn }\IeC {\cyra }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrya }}
 \startnoteentry{96}
 {}
-{pagenote96-219}
+{pagenote96-220}
 {Hpagenote.96}
 Гегель
 здесь
@@ -6961,7 +6960,7 @@ V
 \endnoteentry
 \startnoteentry{97}
 {}
-{pagenote97-220}
+{pagenote97-222}
 {Hpagenote.97}
 Выражения
 <<неудобство>>
@@ -6986,7 +6985,7 @@ V
 \endnoteentry
 \startnoteentry{98}
 {}
-{pagenote98-222}
+{pagenote98-223}
 {Hpagenote.98}
 Выражения
 <<Я
@@ -7024,7 +7023,7 @@ V
 \endnoteentry
 \startnoteentry{99}
 {}
-{pagenote99-223}
+{pagenote99-224}
 {Hpagenote.99}
 <<Опровержение
 мендельсоновского
@@ -7049,7 +7048,7 @@ V
 \endnoteentry
 \startnoteentry{100}
 {}
-{pagenote100-228}
+{pagenote100-230}
 {Hpagenote.100}
 Имеется
 в
@@ -7061,7 +7060,7 @@ V
 \endnoteentry
 \startnoteentry{101}
 {}
-{pagenote101-234}
+{pagenote101-236}
 {Hpagenote.101}
 В
 сложении
@@ -7182,7 +7181,7 @@ I
 \endnoteentry
 \startnoteentry{102}
 {}
-{pagenote102-235}
+{pagenote102-237}
 {Hpagenote.102}
 См.
 {\em
@@ -7198,7 +7197,7 @@ I
 \endnoteentry
 \startnoteentry{103}
 {}
-{pagenote103-237}
+{pagenote103-238}
 {Hpagenote.103}
 Под
 <<десятичными
@@ -7228,7 +7227,7 @@ I
 \endnoteentry
 \startnoteentry{104}
 {}
-{pagenote104-237}
+{pagenote104-238}
 {Hpagenote.104}
 Гегель,
 повидимому,
@@ -7247,7 +7246,7 @@ arithmeticae)
 \endnoteentry
 \startnoteentry{105}
 {}
-{pagenote105-239}
+{pagenote105-240}
 {Hpagenote.105}
 В
 немецком
@@ -7268,7 +7267,7 @@ welcher>>.\label
 \endnoteentry
 \startnoteentry{106}
 {}
-{pagenote106-247}
+{pagenote106-248}
 {Hpagenote.106}
 Ср.
 рассуждения
@@ -7291,7 +7290,7 @@ welcher>>.\label
 \endnoteentry
 \startnoteentry{107}
 {}
-{pagenote107-251}
+{pagenote107-253}
 {Hpagenote.107}
 По
 Гегелю
@@ -7340,7 +7339,7 @@ welcher>>.\label
 \endnoteentry
 \startnoteentry{108}
 {}
-{pagenote108-254}
+{pagenote108-256}
 {Hpagenote.108}
 Ср.
 следующие
@@ -7466,7 +7465,7 @@ B}>>.\label
 \endnoteentry
 \startnoteentry{109}
 {}
-{pagenote109-254}
+{pagenote109-256}
 {Hpagenote.109}
 Греческое
 слово
@@ -7487,7 +7486,7 @@ B}>>.\label
 \endnoteentry
 \startnoteentry{110}
 {}
-{pagenote110-254}
+{pagenote110-256}
 {Hpagenote.110}
 См.
 выше,
@@ -7504,7 +7503,7 @@ B}>>.\label
 \endnoteentry
 \startnoteentry{111}
 {}
-{pagenote111-255}
+{pagenote111-256}
 {Hpagenote.111}
 В
 немецком
@@ -7525,7 +7524,7 @@ B}>>.\label
 \endnoteentry
 \startnoteentry{112}
 {}
-{pagenote112-255}
+{pagenote112-256}
 {Hpagenote.112}
 По
 Гегелю
@@ -7561,7 +7560,7 @@ Gleichförmige)
 \endnoteentry
 \startnoteentry{113}
 {}
-{pagenote113-255}
+{pagenote113-256}
 {Hpagenote.113}
 В
 немецком
@@ -7582,7 +7581,7 @@ Gleichförmige)
 \endnoteentry
 \startnoteentry{114}
 {}
-{pagenote114-258}
+{pagenote114-259}
 {Hpagenote.114}
 В
 немецком
@@ -7624,7 +7623,7 @@ welchen>>,
 \endnoteentry
 \startnoteentry{115}
 {}
-{pagenote115-259}
+{pagenote115-261}
 {Hpagenote.115}
 Имеются
 в
@@ -7637,7 +7636,7 @@ welchen>>,
 \endnoteentry
 \startnoteentry{116}
 {}
-{pagenote116-262}
+{pagenote116-264}
 {Hpagenote.116}
 Циркумвалляционной
 линией
@@ -7670,7 +7669,7 @@ circumvallare
 \endnoteentry
 \startnoteentry{117}
 {}
-{pagenote117-262}
+{pagenote117-264}
 {Hpagenote.117}
 Полное
 заглавие:
@@ -7688,7 +7687,7 @@ Naturwissenschaft>>).
 \endnoteentry
 \startnoteentry{118}
 {}
-{pagenote118-266}
+{pagenote118-268}
 {Hpagenote.118}
 Гегель
 указывает
@@ -7769,7 +7768,7 @@ II
 \endnoteentry
 \startnoteentry{119}
 {}
-{pagenote119-267}
+{pagenote119-269}
 {Hpagenote.119}
 Говоря
 здесь
@@ -7835,7 +7834,7 @@ II
 \pagenotesubhead{{\protect \cyrillictext  \CYRG \cyrl \cyra \cyrv \cyra }}{11}{\IeC {\CYRT }\IeC {\cyrr }\IeC {\cyre }\IeC {\cyrt }\IeC {\cyrsftsn }\IeC {\cyrya } \IeC {\cyrg }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra } \IeC {\CYRA }\IeC {\cyrb }\IeC {\cyrs }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyryu }\IeC {\cyrt }\IeC {\cyrn }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyri }\IeC {\cyrd }\IeC {\cyre }\IeC {\cyrya }}
 \startnoteentry{120}
 {}
-{pagenote120-270}
+{pagenote120-272}
 {Hpagenote.120}
 Об
 <<абсолютной
@@ -8143,7 +8142,7 @@ NB
 \endnoteentry
 \startnoteentry{121}
 {}
-{pagenote121-273}
+{pagenote121-275}
 {Hpagenote.121}
 Это
 место
@@ -8275,7 +8274,7 @@ NB
 \endnoteentry
 \startnoteentry{122}
 {}
-{pagenote122-277}
+{pagenote122-279}
 {Hpagenote.122}
 В
 немецком
@@ -8306,7 +8305,7 @@ sind>>.
 \endnoteentry
 \startnoteentry{123}
 {}
-{pagenote123-279}
+{pagenote123-280}
 {Hpagenote.123}
 Имеется
 в
@@ -8354,7 +8353,7 @@ Hund>>,
 \endnoteentry
 \startnoteentry{124}
 {}
-{pagenote124-281}
+{pagenote124-283}
 {Hpagenote.124}
 Немецкий
 текст
@@ -8420,7 +8419,7 @@ Inhalt>>.
 \endnoteentry
 \startnoteentry{125}
 {}
-{pagenote125-283}
+{pagenote125-285}
 {Hpagenote.125}
 Тот
 силлогизм,
@@ -8584,7 +8583,7 @@ Inhalt>>.
 \endnoteentry
 \startnoteentry{126}
 {}
-{pagenote126-284}
+{pagenote126-286}
 {Hpagenote.126}
 Выше,
 на
@@ -8684,7 +8683,7 @@ Inhalt>>.
 \endnoteentry
 \startnoteentry{127}
 {}
-{pagenote127-284}
+{pagenote127-286}
 {Hpagenote.127}
 Гегель
 имеет
@@ -8783,7 +8782,7 @@ Inhalt>>.
 \endnoteentry
 \startnoteentry{128}
 {}
-{pagenote128-289}
+{pagenote128-291}
 {Hpagenote.128}
 В
 смысле
@@ -8806,7 +8805,7 @@ Inhalt>>.
 \endnoteentry
 \startnoteentry{129}
 {}
-{pagenote129-289}
+{pagenote129-291}
 {Hpagenote.129}
 Немецкий
 текст
@@ -8994,7 +8993,7 @@ XIX
 \endnoteentry
 \startnoteentry{130}
 {}
-{pagenote130-289}
+{pagenote130-291}
 {Hpagenote.130}
 Намек
 на
@@ -9005,7 +9004,7 @@ XIX
 \endnoteentry
 \startnoteentry{131}
 {}
-{pagenote131-291}
+{pagenote131-293}
 {Hpagenote.131}
 Гегель
 хочет
@@ -9255,7 +9254,7 @@ XIX
 \endnoteentry
 \startnoteentry{132}
 {}
-{pagenote132-292}
+{pagenote132-293}
 {Hpagenote.132}
 Этот
 переход
@@ -9559,7 +9558,7 @@ S.
 \endnoteentry
 \startnoteentry{133}
 {}
-{pagenote133-292}
+{pagenote133-293}
 {Hpagenote.133}
 Имеется
 в
