@@ -1,4 +1,4 @@
-all: tom2
+all: tom1 tom2 tom3
 
 tom1:
 	pdflatex -interaction=nonstopmode gegel1.tex|tail -n 20; echo -e \\a
@@ -11,6 +11,12 @@ tom2:
 
 tom2v:
 	pdflatex gegel2.tex
+
+tom3:
+	pdflatex -interaction=nonstopmode gegel3.tex|tail -n 20; echo -e \\a
+
+tom3v:
+	pdflatex gegel3.tex
 
 .phony: clean cleanall
 

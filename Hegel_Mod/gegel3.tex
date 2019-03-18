@@ -145,8 +145,8 @@
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
 
-\maxtocdepth{subsubsection} % ToC depth
-\settocdepth{subsubsection}
+\maxtocdepth{subsection} % ToC depth
+\settocdepth{subsection}
 
 \AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
 
@@ -179,63 +179,32 @@
 
 \begin{document}
 
-\frontmatter
+\mainmatter
 
-{\centering
+\begin{center}
   {\Large Г.~В.~Ф.~ГЕГЕЛЬ} \\
   \vspace{130pt}
   \textbf{\Huge НАУКА ЛОГИКИ} \\
   \vspace{12pt}
-  {\Large Том~I. Объективная логика} \\
+  {\Large Том~II. Субъективная логика} \\
   \vspace{8pt}
-  {\large Книга~II. Учение о сущности} \\
+  {\large Книга~III. Учение о понятии} \\
   \vspace{45pt}
   \textit{перевод} \\
   \textit{Б.~Г.~СТОЛПНЕРА} \\
   \vspace{10pt}
   \textit{под редакцией} \\
   \textit{М.~Б.~МИТИНА}
-\par}
+\end{center}
 
 \clearpage
 
-\mainmatter
-\part[Вторая книга \newline УЧЕНИЕ О СУЩНОСТИ]{Первая книга Учение о сущности}
-\part[{\em Первый отдел} СУЩНОСТЬ КАК РЕФЛЕКСИЯ В СЕБЕ САМОЙ]{Первый отдел. Сущность как рефлексия в себе самой.}
-\chapter*{Первая глава. Видимость.}
-\input{211_vidimost.tex}
+\part*{Гегель 2.}
+\chapter*{Гегель 2.}
+\input{Hegel-2.tex}
 
-\chapter*{Вторая глава. Определённые сущности или определения рефлексии.}
-\input{212_opredelenie.tex}
-
-\chapter*{Третья глава. Основание.}
-\input{213_osnovanie.tex}
-
-\part*{Второй отдел. Явление.}
-\chapter*{Первая глава. Существование.}
-\input{221_suschestvovanie.tex}
-
-\chapter*{Вторая глава. Явление.}
-\input{222_yavlenie.tex}
-
-\chapter*{Третья глава. Существенное Отношение.}
-\input{223_suschestvennoe_otnoshenie.tex}
-
-\part*{Третий отдел. Действительность.}
-\chapter*{Первая глава. Абсолютное.}
-\input{231_absolutnoe.tex}
-
-\chapter*{Вторая глава. Действительность.}
-\input{232_deystvitelnost.tex}
-
-\chapter*{Третья глава. Абсолютное отношение.}
-\input{233_absolutnoe_otnoshenie.tex}
 
 \backmatter
-
-\chapter*{Примечания}
-\input{302_primechanija.tex}
-
 
 \clearpage
 \tableofcontents*
