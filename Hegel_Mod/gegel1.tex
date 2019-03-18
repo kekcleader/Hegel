@@ -4,10 +4,12 @@
 %%%------------------------------------------------------------------------
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[russian,greek,english]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[greek,english,main=russian]{babel}
 \usepackage[final]{microtype} % Less badboxes
 \usepackage{bookmark}
+\usepackage{footnotehyper}
+\usepackage{multicol}
 
 % \usepackage{kpfonts} %Font
 
@@ -143,8 +145,8 @@
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
 
-\maxtocdepth{subsection} % ToC depth
-\settocdepth{subsection}
+\maxtocdepth{subsubsection} % ToC depth
+\settocdepth{subsubsection}
 
 \AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
 
@@ -177,9 +179,9 @@
 
 \begin{document}
 
-\mainmatter
+\frontmatter
 
-\begin{center}
+{\centering
   {\Large Г.~В.~Ф.~ГЕГЕЛЬ} \\
   \vspace{130pt}
   \textbf{\Huge НАУКА ЛОГИКИ} \\
@@ -193,7 +195,7 @@
   \vspace{10pt}
   \textit{под редакцией} \\
   \textit{М.~Б.~МИТИНА}
-\end{center}
+\par}
 
 \clearpage
 
@@ -209,10 +211,11 @@
 \part*{Введение}
 \input{004_vvedenie.tex}
 
-\part*{Первая книга. Учение о бытии.}
-\chapter*{С чего следует начинать логику}
-\input{101_s_chego.tex}
+\mainmatter
 
+\part[Первая книга \newline УЧЕНИЕ О БЫТИИ]{Первая книга Учение о бытии}
+\section[С чего следует начинать науку]{С чего следует начинать науку}
+\input{101_s_chego.tex}
 
 \part*{Первый отдел. Определённость (качество).}
 %         Первая глава. Бытие.
@@ -277,13 +280,15 @@
 \chapter*{Третья глава. Абсолютное отношение.}
 \input{233_absolutnoe_otnoshenie.tex}
 
+\backmatter
+
 \part*{Приложения}
 \chapter*{Предисловие издателя}
 \input{301_prilozhenija.tex}
 
 \chapter*{Примечания}
 \input{302_primechanija.tex}
-\backmatter
+
 
 \clearpage
 \tableofcontents*
