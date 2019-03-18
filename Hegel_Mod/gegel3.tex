@@ -166,6 +166,16 @@
 \renewcommand{\chapternumberline}[1]{} % Remove chapter number in ToC
 \renewcommand{\cftchapterdotsep}{\cftdotsep} % Chapter dots in ToC
 
+\renewcommand{\printpartname}{}
+\renewcommand{\thepart}{}
+
+\renewcommand{\printchaptername}{}
+\renewcommand{\thechapter}{}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
 % Remove section numbers in ToC
 \let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
 \let\oldcftspn\cftsectionafterpnum% and of \cftsectionafterpnum

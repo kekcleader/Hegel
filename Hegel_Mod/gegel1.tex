@@ -166,6 +166,17 @@
 \renewcommand{\chapternumberline}[1]{} % Remove chapter number in ToC
 \renewcommand{\cftchapterdotsep}{\cftdotsep} % Chapter dots in ToC
 
+\renewcommand{\printpartname}{}
+\renewcommand{\thepart}{}
+
+\renewcommand{\printchaptername}{}
+\renewcommand{\thechapter}{}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+
 % Remove section numbers in ToC
 \let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
 \let\oldcftspn\cftsectionafterpnum% and of \cftsectionafterpnum
@@ -180,6 +191,8 @@
 \begin{document}
 
 \frontmatter
+
+\pagestyle{empty}
 
 {\centering
   {\Large Г.~В.~Ф.~ГЕГЕЛЬ} \\
@@ -199,7 +212,14 @@
 
 \clearpage
 
+\begin{center}
+\includegraphics[width=11cm,height=14cm]{hegel-img001.png}
+\end{center}
+
 \part[О значении воинствующего материализма.]{О значении воинствующего материализма.}
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{1}
 \input{001_o_znachenii.tex}
 
 \part[Предисловие к первому изданию]{Предисловие к первому изданию}
@@ -215,6 +235,9 @@
 
 \part[Первая книга \newline УЧЕНИЕ О БЫТИИ]{Первая книга Учение о бытии}
 \section[С чего следует начинать науку]{С чего следует начинать науку}
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \input{101_s_chego.tex}
 
 \part[Первый отдел \newline ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)]{Первый отдел. Определенность (Качество)}
