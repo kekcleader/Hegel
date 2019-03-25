@@ -18,6 +18,8 @@
 % \usepackage{tikz} % Figures
 \usepackage{graphicx} % Include figures
 
+\usepackage{pdfpages}
+
 %%% PAGE LAYOUT 
 %%%------------------------------------------------------------------------
 
@@ -191,6 +193,10 @@
 
 \frontmatter
 
+\includepdf{cover2.pdf}
+
+\pagestyle{empty}
+
 {\centering
   {\Large Г.~В.~Ф.~ГЕГЕЛЬ} \\
   \vspace{130pt}
@@ -210,10 +216,16 @@
 \clearpage
 
 \mainmatter
-\part[Вторая книга \newline УЧЕНИЕ О СУЩНОСТИ]{Первая книга Учение о сущности}
+\part[Вторая книга \newline УЧЕНИЕ О СУЩНОСТИ]{Вторая книга Учение о сущности}
 \part[{\em Первый отдел} СУЩНОСТЬ КАК РЕФЛЕКСИЯ В СЕБЕ САМОЙ]{Первый отдел. Сущность как рефлексия в себе самой.}
 \chapter*{Первая глава. Видимость.}
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
 \input{211_vidimost.tex}
+
 
 \chapter*{Вторая глава. Определённые сущности или определения рефлексии.}
 \input{212_opredelenie.tex}

@@ -18,6 +18,8 @@
 % \usepackage{tikz} % Figures
 \usepackage{graphicx} % Include figures
 
+\usepackage{pdfpages}
+
 %%% PAGE LAYOUT 
 %%%------------------------------------------------------------------------
 
@@ -191,6 +193,10 @@
 
 \mainmatter
 
+\includepdf{cover3.pdf}
+
+\pagestyle{empty}
+
 \begin{center}
   {\Large Г.~В.~Ф.~ГЕГЕЛЬ} \\
   \vspace{130pt}
@@ -207,12 +213,27 @@
   \textit{М.~Б.~МИТИНА}
 \end{center}
 
+\vspace{45pt}
+
+\begin{center}
+
+Главный редактор
+
+{\em М.~В.~Попов}
+
+\vspace{20pt}
+
+Корректоры
+
+{\em Н.~А.~Гуринович}, {\em А.~В.~Кузьмин}, {\em В.~А.~Ломов}
+\end{center}
+
 \clearpage
 
-\part*{Гегель 2.}
-\chapter*{Гегель 2.}
-\input{Hegel-2.tex}
+\pagestyle{plain}
+\setcounter{page}{1}
 
+\input{Hegel-2.tex}
 
 \backmatter
 
