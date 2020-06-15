@@ -16,6 +16,10 @@ apt-get install -y texlive-full
 ```
 pdflatex gegel1.tex
 ```
+Если не работает (ошибка «auto expansion»), выполните команду:
+```
+updmap
+```
 
 Для ОС Виндоус существует [программа TeXworks](https://github.com/TeXworks/texworks/releases),
 для работы которой необхоим также пакет [MiKTeX](http://www.miktex.org).
