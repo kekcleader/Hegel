@@ -39,4 +39,12 @@ updmap
 подключаемым модулем для Libre Office Writer:
 ```
 apt-get install writer2latex
+w2l -ultraclean -config=a.conf Hegel_T1.odt
+```
+
+Файл `a.conf` при этом выглядит так:
+```
+<config>
+  <option name="inputencoding" value="utf8" />
+</config>
 ```
