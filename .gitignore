@@ -2,4 +2,6 @@
 *.aux
 *.toc
 *.pdf
+*.idx
+*.ent
 *.tex.swp
