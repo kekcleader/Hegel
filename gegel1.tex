@@ -137,7 +137,11 @@
 
 \let\oldpagenote\pagenote%
   \renewcommand{\pagenote}[1]{%
-  \textsuperscript{(}\oldpagenote{#1}\textsuperscript{)}}
+  \textsuperscript{~(}\oldpagenote{#1}\textsuperscript{)}}
+
+\let\oldfootnote\footnote%
+  \renewcommand{\footnote}[1]{%
+  \textsuperscript{~}\oldfootnote{#1}}
 
 \renewcommand{\noteidinnotes}[2]{%
   \textsuperscript{#1}~~}
