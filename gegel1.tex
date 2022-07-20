@@ -65,6 +65,8 @@
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
 
+\usepackage{indentfirst}
+
 %%% FLOATS AND CAPTIONS
 %%%------------------------------------------------------------------------
 
@@ -148,6 +150,13 @@
 \renewcommand{\pageinnotes}[1]{%
   К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
 
+%\renewcommand*{\notedivision}{\chapter*{ПРИМЕЧАНИЯ}\addcontentsline{toc}{chapter}{Примечания}}
+\renewcommand*{\notedivision}{}
+
+\renewcommand*{\pagenotesubhead}[3]{}
+
+\renewcommand*{\pagenotesubheadstarred}[3]{\section*{QWE #3 WER}}
+
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
 
@@ -227,6 +236,8 @@
 \setcounter{page}{1}
 \input{001_o_znachenii.tex}
 
+\mainmatter
+
 \part[Предисловие к первому изданию]{Предисловие к первому изданию}
 \input{002_predislovie.tex}
 
@@ -236,16 +247,15 @@
 \part[Введение]{Введение}
 \input{004_vvedenie.tex}
 
-\mainmatter
-
-\part[Первая книга \newline УЧЕНИЕ О БЫТИИ]{Первая книга Учение о бытии}
+\part[Первая книга. Учение о бытии]{\mdseries ПЕРВАЯ КНИГА \\ \bfseries УЧЕНИЕ О БЫТИИ}
+%!FIXME добавить разрыв страницы
 \section[С чего следует начинать науку]{С чего следует начинать науку}
 \pagestyle{plain}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \input{101_s_chego.tex}
 
-\part[Первый отдел \newline ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)]{Первый отдел. Определенность (Качество)}
+\part[Первый отдел \\ ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)]{Первый отдел. Определенность (Качество)}
 %         Первая глава. Бытие.
 \input{111_bytie.tex}
 
@@ -256,7 +266,7 @@
 \input{113_dlya_sebya_bytie.tex}
 
 
-\part[{\em Второй отдел} \newline ВЕЛИЧИНА (КОЛИЧЕСТВО)]{Второй отдел. Величина (Количество)}
+\part[{\em Второй отдел} \\ ВЕЛИЧИНА (КОЛИЧЕСТВО)]{Второй отдел. Величина (Количество)}
 %         Первая глава. Количество.
 \input{121_kolichestvo.tex}
 
@@ -283,7 +293,9 @@
 % {Предисловие издателя}
 \input{301_prilozhenija.tex}
 
-\chapter[Примечания]{Примечания}
+\newpage
+
+\chapter[ПРИМЕЧАНИЯ]{Примечания}
 \input{302_primechanija.tex}
 
 
