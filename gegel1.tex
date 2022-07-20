@@ -46,7 +46,7 @@
   \renewcommand{\printchapternum}{\chapnumfont \thechapter}
   \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
   \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
-  \renewcommand{\chaptitlefont}{\centering\bfseries\LARGE}
+  \renewcommand{\chaptitlefont}{\centering\bfseries\normalsize}
   \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
   \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
 
@@ -60,7 +60,10 @@
 
 \chapterstyle{standard}
 
-\setsecheadstyle{\normalfont\large\bfseries}
+\newcommand{\mychapter}[3][]{%
+  \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
+
+\setsecheadstyle{\normalfont\bfseries\centering}
 \setsubsecheadstyle{\normalfont\normalsize\bfseries}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
@@ -155,7 +158,7 @@
 
 \renewcommand*{\pagenotesubhead}[3]{}
 
-\renewcommand*{\pagenotesubheadstarred}[3]{\section*{QWE #3 WER}}
+\renewcommand*{\pagenotesubheadstarred}[3]{}
 
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
@@ -277,14 +280,14 @@
 \input{123_kolichestvennoe_otnoshenie.tex}
 
 
-\part[{\em Третий отдел} МEРА]{Третий отдел. Мера}
+\part[Третий отдел. Мера]{{\em\mdseries Третий отдел}\\МEРА}
 % {Первая глава. Специфическое количество.}
 \input{131_specificheskoe_kolichestvo.tex}
 
-\chapter[{\em Вторая глава} Реальная мера]{Вторая глава. Реальная мера}
+\mychapter[Вторая глава. Реальная мера]{Вторая глава}{РЕАЛЬНАЯ МЕРА}
 \input{132_realnaya_mera.tex}
 
-\chapter[{\em Третья глава} Становление Сущности]{Третья глава. Становление Сущности}
+\mychapter[Третья глава. Становление Сущности]{Третья глава}{СТАНОВЛЕНИЕ СУЩНОСТИ}
 \input{133_stanovlenie_suschnosti.tex}
 
 \backmatter
