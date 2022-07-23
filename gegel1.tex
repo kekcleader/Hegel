@@ -12,6 +12,7 @@
 \usepackage{multicol}
 \usepackage{fancyhdr} % Required by poemscol
 \usepackage{poemscol}
+\usepackage{geometry}
 
 % \usepackage{kpfonts} %Font
 
@@ -73,6 +74,7 @@
 \setparaindent{0pt}\setafterparaskip{0pt}
 
 \usepackage{indentfirst}
+\setlength\parindent{6mm}
 
 %%% FLOATS AND CAPTIONS
 %%%------------------------------------------------------------------------
@@ -232,19 +234,37 @@
 
 \clearpage
 
-\begin{center}
-\includegraphics[width=11cm,height=14cm]{hegel-img001.png}
-\end{center}
-
 \pagestyle{plain}
-\pagenumbering{roman}
+\pagenumbering{Roman}
 \setcounter{page}{1}
 \part[О значении воинствующего материализма]{О значении воинствующего материализма}
 \input{001_o_znachenii.tex}
 
+\cleardoublepage
+\pagestyle{empty}
+
+{\centering
+  \ \\
+  \vspace{50mm}
+  {\huge\bfseries ГЕГЕЛЬ} \\
+  \vspace{50mm}
+  {\Huge\bfseries НАУКА ЛОГИКИ}
+\par}
+
+\newgeometry{left=15mm,right=15mm,top=25mm,bottom=5mm}
+
+\begin{center}
+\includegraphics[width=14cm]{hegel-img001.png}
+\end{center}
+
+\restoregeometry
+
 \mainmatter
 
-\part[Предисловие к первому изданию]{Предисловие к первому изданию}
+\pagestyle{plain}
+
+\part[Предисловие к первому изданию]{\large ПРЕДИСЛОВИЕ К ПЕРВОМУ ИЗДАНИЮ}
+\thispagestyle{empty}
 \input{002_predislovie.tex}
 
 \part[Предисловие ко второму изданию]{Предисловие ко второму изданию}
