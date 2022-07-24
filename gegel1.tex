@@ -152,12 +152,14 @@
 
 \let\oldfootnote\footnote%
   \renewcommand{\footnote}[1]{%
-  \textsuperscript{~}\oldfootnote{#1}}
+  \,\oldfootnote{#1}}
 
 \renewcommand{\noteidinnotes}[2]{%
   \hspace{9mm}\textsuperscript{#1}\hspace{1.5mm}}
 \renewcommand{\pageinnotes}[1]{%
   К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
+
+\renewcommand*{\thefootnote}{*}
 
 \renewcommand*{\notedivision}{}
 
