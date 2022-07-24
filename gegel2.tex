@@ -137,12 +137,29 @@
 
 \let\oldpagenote\pagenote%
   \renewcommand{\pagenote}[1]{%
-  \textsuperscript{(}\oldpagenote{#1}\textsuperscript{)}}
+  \textsuperscript{~(}\oldpagenote{#1}\textsuperscript{)}}
+
+\let\oldfootnote\footnote%
+  \renewcommand{\footnote}[1]{%
+  \,\oldfootnote{~#1}}
 
 \renewcommand{\noteidinnotes}[2]{%
-  \textsuperscript{#1}~~}
+  \hspace{9mm}\textsuperscript{#1}\hspace{1.5mm}}
 \renewcommand{\pageinnotes}[1]{%
   К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
+
+\renewcommand*{\thefootnote}{\ding{81}}
+
+\renewcommand*{\footnoterule}{%
+  \kern-3pt%
+  \hrule width 0.17\columnwidth
+  \kern 2.6pt}
+
+\renewcommand*{\notedivision}{}
+
+\renewcommand*{\pagenotesubhead}[3]{}
+
+\renewcommand*{\pagenotesubheadstarred}[3]{}
 
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
@@ -159,7 +176,7 @@
 }
 \usepackage{memhfixc}   %
 
-\author{Г.~В.~Ф.~Гегель}
+\author{Г.~В.~Ф. Гегель}
 \title{Наука логики}
 \date{}
 

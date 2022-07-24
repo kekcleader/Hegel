@@ -13,6 +13,7 @@
 \usepackage{fancyhdr} % Required by poemscol
 \usepackage{poemscol}
 \usepackage{geometry}
+\usepackage{pifont}
 
 % \usepackage{kpfonts} %Font
 
@@ -152,14 +153,19 @@
 
 \let\oldfootnote\footnote%
   \renewcommand{\footnote}[1]{%
-  \,\oldfootnote{#1}}
+  \,\oldfootnote{~#1}}
 
 \renewcommand{\noteidinnotes}[2]{%
   \hspace{9mm}\textsuperscript{#1}\hspace{1.5mm}}
 \renewcommand{\pageinnotes}[1]{%
   К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
 
-\renewcommand*{\thefootnote}{*}
+\renewcommand*{\thefootnote}{\ding{81}}
+
+\renewcommand*{\footnoterule}{%
+  \kern-3pt%
+  \hrule width 0.17\columnwidth
+  \kern 2.6pt}
 
 \renewcommand*{\notedivision}{}
 
@@ -269,10 +275,12 @@
 \thispagestyle{empty}
 \input{002_predislovie.tex}
 
-\part[Предисловие ко второму изданию]{Предисловие ко второму изданию}
+\part[Предисловие ко второму изданию]{\large ПРЕДИСЛОВИЕ КО ВТОРОМУ ИЗДАНИЮ}
+\thispagestyle{empty}
 \input{003_predislovie.tex}
 
-\part[Введение]{Введение}
+\part[Введение]{\large ВВЕДЕНИЕ}
+\thispagestyle{empty}
 \input{004_vvedenie.tex}
 
 \part[Первая книга. Учение о бытии]{\mdseries ПЕРВАЯ КНИГА \\ \bfseries УЧЕНИЕ О БЫТИИ}
