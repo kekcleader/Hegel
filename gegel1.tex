@@ -99,6 +99,8 @@
 \setlength{\absleftindent}{0.1\textwidth} % Width of abstract
 \setlength{\absrightindent}{\absleftindent}
 
+\tightlists
+
 %%% HEADER AND FOOTER
 %%%------------------------------------------------------------------------
 
@@ -219,6 +221,10 @@
 \let\numberline\oldnl% % restore orginal \numberline
 \oldcftspn} % use original \cftsectionafterpnum
 
+\cftpagenumbersoff{book}
+\renewcommand*{\cftbookfont}{\hfil}
+\renewcommand*{\cftbookafterpnum}{\hfil}
+
 \begin{document}
 
 \frontmatter
@@ -259,7 +265,7 @@
   {\Huge\bfseries НАУКА ЛОГИКИ}
 \par}
 
-\addcontentsline{toc}{book}{{\em Гегель <<НАУКА ЛОГИКИ>>}}
+\addcontentsline{toc}{book}{\normalsize\bfseries\em Гегель <<НАУКА ЛОГИКИ>>}
 
 \newgeometry{left=15mm,right=15mm,top=25mm,bottom=5mm}
 
@@ -285,12 +291,12 @@
 \thispagestyle{empty}
 \input{004_vvedenie.tex}
 
-\part[Первая книга. Учение о бытии]{\mdseries ПЕРВАЯ КНИГА \\ \bfseries УЧЕНИЕ О БЫТИИ}
+\part[Первая книга. Учение о бытии]%
+     {\ \\\vspace{200pt}\Large\mdseries ПЕРВАЯ КНИГА \\ \LARGE\bfseries УЧЕНИЕ О БЫТИИ}
+\thispagestyle{empty}
 \clearpage
 \section[С чего следует начинать науку]{С чего следует начинать науку}
 \pagestyle{plain}
-\pagenumbering{arabic}
-\setcounter{page}{1}
 \input{101_s_chego.tex}
 
 \part[Первый отдел. Определенность (Качество)]{ПЕРВЫЙ ОТДЕЛ \\ ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)}
