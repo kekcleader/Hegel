@@ -69,6 +69,10 @@
 \newcommand{\hegchapter}[3][]{%
   \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
 
+\newcommand{\hegremark}[3][]{%
+  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\\
+  \footnotesize #3}}
+
 \setsecheadstyle{\normalfont\bfseries\centering}
 \setsubsecheadstyle{\normalfont\normalsize\bfseries\centering}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
@@ -178,8 +182,8 @@
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
 
-\maxtocdepth{subsubsection} % ToC depth
-\settocdepth{subsubsection}
+\maxtocdepth{paragraph} % ToC depth
+\settocdepth{paragraph}
 \addto\captionsrussian{\renewcommand{\contentsname}{ОГЛАВЛЕНИЕ}}
 \setlength{\cftbeforepartskip}{0.5mm}
 
