@@ -70,7 +70,7 @@
   \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
 
 \newcommand{\hegremark}[3][]{%
-  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\\
+  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
   \footnotesize #3}}
 
 \setsecheadstyle{\normalfont\bfseries\centering}
@@ -214,7 +214,6 @@
 \makeatletter
 \renewcommand{\@seccntformat}[1]{}
 \makeatother
-
 
 % Remove section numbers in ToC
 \let\oldcftsf\cftsectionfont% save definition of \cftsectionfont

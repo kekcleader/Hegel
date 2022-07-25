@@ -6,10 +6,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 \usepackage[greek,english,main=russian]{babel}
-\usepackage[final]{microtype} % Less badboxes
+\usepackage[final,letterspace=150]{microtype} % Less badboxes
 \usepackage{bookmark}
 \usepackage{footnotehyper}
 \usepackage{multicol}
+\usepackage{fancyhdr} % Required by poemscol
+\usepackage{poemscol}
+\usepackage{geometry}
+\usepackage{pifont}
 
 % \usepackage{kpfonts} %Font
 
@@ -24,6 +28,10 @@
 \setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left and right margin
 \setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
+
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
 
 %%% SECTIONAL DIVISIONS
 %%%------------------------------------------------------------------------
@@ -44,7 +52,7 @@
   \renewcommand{\printchapternum}{\chapnumfont \thechapter}
   \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
   \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
-  \renewcommand{\chaptitlefont}{\centering\bfseries\LARGE}
+  \renewcommand{\chaptitlefont}{\centering\bfseries\normalsize}
   \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
   \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
 
@@ -58,12 +66,20 @@
 
 \chapterstyle{standard}
 
-\setsecheadstyle{\normalfont\large\bfseries}
-\setsubsecheadstyle{\normalfont\normalsize\bfseries}
+\newcommand{\hegchapter}[3][]{%
+  \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
+
+\newcommand{\hegremark}[3][]{%
+  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
+  \footnotesize #3}}
+
+\setsecheadstyle{\normalfont\bfseries\centering}
+\setsubsecheadstyle{\normalfont\normalsize\bfseries\centering}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
 
 \usepackage{indentfirst}
+\setlength\parindent{6mm}
 
 %%% FLOATS AND CAPTIONS
 %%%------------------------------------------------------------------------
@@ -86,6 +102,8 @@
 \renewcommand{\abstractnamefont}{\normalfont\small\bfseries} % Font of abstract title
 \setlength{\absleftindent}{0.1\textwidth} % Width of abstract
 \setlength{\absrightindent}{\absleftindent}
+
+\tightlists
 
 %%% HEADER AND FOOTER
 %%%------------------------------------------------------------------------
@@ -148,7 +166,7 @@
 \renewcommand{\pageinnotes}[1]{%
   К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
 
-\renewcommand*{\thefootnote}{\ding{81}}
+\renewcommand*{\thefootnote}{\ding{93}}
 
 \renewcommand*{\footnoterule}{%
   \kern-3pt%
@@ -164,17 +182,19 @@
 %%% NEW COMMANDS
 %%%------------------------------------------------------------------------
 
-\maxtocdepth{subsubsection} % ToC depth
-\settocdepth{subsubsection}
+\maxtocdepth{paragraph} % ToC depth
+\settocdepth{paragraph}
+\addto\captionsrussian{\renewcommand{\contentsname}{ОГЛАВЛЕНИЕ}}
+\setlength{\cftbeforepartskip}{0.5mm}
 
 \AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
 
 \usepackage{hyperref}   % Internal hyperlinks
 \hypersetup{
-  pdfborder={0 0 0},      % No borders around internal hyperlinks
-  pdfauthor={ФРА} % author
+  pdfborder={0 0 0},    % No borders around internal hyperlinks
+  pdfauthor={ФРА}       % author
 }
-\usepackage{memhfixc}   %
+\usepackage{memhfixc}
 
 \author{Г.~В.~Ф. Гегель}
 \title{Наука логики}
@@ -206,6 +226,10 @@
 \let\numberline\oldnl% % restore orginal \numberline
 \oldcftspn} % use original \cftsectionafterpnum
 
+\cftpagenumbersoff{book}
+\renewcommand*{\cftbookfont}{\hfil}
+\renewcommand*{\cftbookafterpnum}{\hfil}
+
 \begin{document}
 
 \frontmatter
@@ -232,9 +256,15 @@
 \mainmatter
 \pagestyle{plain}
 
-\part[Вторая книга \\ УЧЕНИЕ О СУЩНОСТИ]{Вторая книга. Учение о сущности}
-\part[{\em Первый отдел} СУЩНОСТЬ КАК РЕФЛЕКСИЯ В СЕБЕ САМОЙ]{Первый отдел. Сущность как рефлексия в себе самой.}
-\chapter*{Первая глава. Видимость.}
+\addtocontents{toc}{\vspace{2mm}%
+  {\centering%
+    \lsstyle\normalsize\bfseries Вторая книга\\}}
+
+\part[\hspace{38mm}УЧЕНИЕ О СУЩНОСТИ]%
+     {\ \\\vspace{200pt}\Large\mdseries ВТОРАЯ КНИГА \\
+      \LARGE\bfseries УЧЕНИЕ О СУЩНОСТИ}
+\thispagestyle{empty}
+\clearpage
 \input{211_vidimost.tex}
 
 \chapter*{Вторая глава. Определённые сущности или определения рефлексии.}
