@@ -171,7 +171,8 @@
 \renewcommand*{\footnoterule}{%
   \kern-3pt%
   \hrule width 0.17\columnwidth
-  \kern 2.6pt}
+  \kern 2.6pt
+  \vspace{1mm}}
 
 \renewcommand*{\notedivision}{}
 
@@ -256,8 +257,9 @@
 \pagestyle{plain}
 \pagenumbering{Roman}
 \setcounter{page}{1}
+\renewcommand{\parttitlefont}{\large}
 \part[\normalsize{\em Ленин,} О значении воинствующего материализма]%
-     {О значении воинствующего материализма}
+     {{\em В.~И.~Ленин}\\{\bfseries О значении воинствующего материализма}}
 \input{001_o_znachenii.tex}
 
 \cleardoublepage
@@ -293,9 +295,13 @@
 \thispagestyle{empty}
 \input{002_predislovie.tex}
 
+\clearpage
+
 \section[Предисловие ко второму изданию]{\large ПРЕДИСЛОВИЕ КО ВТОРОМУ ИЗДАНИЮ}
 \thispagestyle{empty}
 \input{003_predislovie.tex}
+
+\clearpage
 
 \section[Введение]{\large ВВЕДЕНИЕ}
 \thispagestyle{empty}
@@ -306,10 +312,10 @@
     \lsstyle\normalsize\bfseries Первая книга\\}}
 
 \part[\hspace{38mm}УЧЕНИЕ О БЫТИИ]%
-     {\ \\\vspace{200pt}\Large\mdseries ПЕРВАЯ КНИГА \\
+     {\ \\\vspace{200pt}\Large\mdseries ПЕРВАЯ КНИГА\\\ \\
       \LARGE\bfseries УЧЕНИЕ О БЫТИИ}
 \thispagestyle{empty}
-\clearpage
+\cleardoublepage
 \section[С чего следует начинать науку]{С ЧЕГО СЛЕДУЕТ НАЧИНАТЬ НАУКУ}
 \pagestyle{plain}
 \input{101_s_chego.tex}
