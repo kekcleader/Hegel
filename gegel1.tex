@@ -42,7 +42,7 @@
 \makeatletter %
 \makechapterstyle{standard}{
   \setlength{\beforechapskip}{0\baselineskip}
-  \setlength{\midchapskip}{1\baselineskip}
+  \setlength{\midchapskip}{3\baselineskip}
   \setlength{\afterchapskip}{2\baselineskip}
   \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
   \renewcommand{\chapnamefont}{\centering\normalfont\Large}
@@ -70,12 +70,14 @@
   \addtocontents{toc}{\vspace{2mm}%
     {\centering%
       \normalsize\bfseries\em #1\\}}
-  \part[\small #2]%
-       {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries #1}\\%
-        \normalsize #2\end{Spacing}}}
+  \part[\small \MakeUppercase{#2}]%
+       {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries%
+        #1}\nopagebreak\\\normalsize\MakeUppercase{#2}\end{Spacing}}}
 
 \newcommand{\hegchapter}[2][]{%
-  \chapter[{\em #1.} #2]{\fontsize{11}{18}\selectfont{\em\mdseries #1}\\ \MakeUppercase{#2}}}
+  \chapter[{\em #1.} #2]{%
+    \fontsize{11}{18}\selectfont{\em\mdseries #1}\nopagebreak\\%
+    \MakeUppercase{#2}}}
 
 \newcommand{\hegremark}[3][]{%
   \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
@@ -328,7 +330,7 @@
 \pagestyle{plain}
 \input{101_s_chego.tex}
 
-\hegpart[Первый отдел]{ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)}
+\hegpart[Первый отдел]{Определенность (качество)}
 
 % Первая глава. Бытие.
 \input{111_bytie.tex}
@@ -339,7 +341,7 @@
 \hegchapter[Третья глава]{Для-себя-бытие}
 \input{113_dlya_sebya_bytie.tex}
 
-\hegpart[Второй отдел]{ВЕЛИЧИНА (КОЛИЧЕСТВО)}
+\hegpart[Второй отдел]{Величина (количество)}
 
 % Первая глава. Количество.
 \input{121_kolichestvo.tex}
@@ -350,7 +352,7 @@
 \hegchapter[Третья глава]{Количественное отношение}
 \input{123_kolichestvennoe_otnoshenie.tex}
 
-\hegpart[Третий отдел]{МЕРА}
+\hegpart[Третий отдел]{Мера}
 
 % Первая глава. Специфическое количество.
 \input{131_specificheskoe_kolichestvo.tex}
