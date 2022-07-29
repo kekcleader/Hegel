@@ -66,6 +66,14 @@
 
 \chapterstyle{standard}
 
+\newcommand{\hegpart}[2][]{%
+  \addtocontents{toc}{\vspace{2mm}%
+    {\centering%
+      \normalsize\bfseries\em #1\\}}
+  \part[\small #2]%
+       {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries #1}\\%
+        \normalsize #2\end{Spacing}}}
+
 \newcommand{\hegchapter}[3][]{%
   \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
 
@@ -320,13 +328,7 @@
 \pagestyle{plain}
 \input{101_s_chego.tex}
 
-\addtocontents{toc}{\vspace{2mm}%
-  {\centering%
-    \normalsize\bfseries\em Первый отдел\\}}
-
-\part[\small ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)]%
-     {\fontsize{9}{11}\selectfont{\mdseries ПЕРВЫЙ ОТДЕЛ}\\%
-      \normalsize ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)}
+\hegpart[Первый отдел]{ОПРЕДЕЛЕННОСТЬ (КАЧЕСТВО)}
 
 % Первая глава. Бытие.
 \input{111_bytie.tex}
@@ -337,13 +339,8 @@
 \hegchapter[{\em Третья глава.} Для-себя-бытие]{Третья глава}{ДЛЯ-СЕБЯ-БЫТИЕ}
 \input{113_dlya_sebya_bytie.tex}
 
-\addtocontents{toc}{\vspace{2mm}%
-  {\centering%
-    \normalsize\bfseries\em Второй отдел\\}}
+\hegpart[Второй отдел]{ВЕЛИЧИНА (КОЛИЧЕСТВО)}
 
-\part[\small ВЕЛИЧИНА (КОЛИЧЕСТВО)]%
-     {\fontsize{9}{11}\selectfont{\mdseries ВТОРОЙ ОТДЕЛ}\\%
-      \normalsize ВЕЛИЧИНА (КОЛИЧЕСТВО)}
 % Первая глава. Количество.
 \input{121_kolichestvo.tex}
 
@@ -355,13 +352,8 @@
   {Третья глава}{КОЛИЧЕСТВЕННОЕ ОТНОШЕНИЕ}
 \input{123_kolichestvennoe_otnoshenie.tex}
 
-\addtocontents{toc}{\vspace{2mm}%
-  {\centering%
-    \normalsize\bfseries\em Третий отдел\\}}
+\hegpart[Третий отдел]{МЕРА}
 
-\part[\small МЕРА]%
-     {\fontsize{9}{11}\selectfont{\mdseries ТРЕТИЙ ОТДЕЛ}\\%
-      \normalsize МЕРА}
 % Первая глава. Специфическое количество.
 \input{131_specificheskoe_kolichestvo.tex}
 
