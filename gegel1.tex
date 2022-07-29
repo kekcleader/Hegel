@@ -74,8 +74,8 @@
        {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries #1}\\%
         \normalsize #2\end{Spacing}}}
 
-\newcommand{\hegchapter}[3][]{%
-  \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
+\newcommand{\hegchapter}[2][]{%
+  \chapter[{\em #1.} #2]{\fontsize{11}{18}\selectfont{\em\mdseries #1}\\ \MakeUppercase{#2}}}
 
 \newcommand{\hegremark}[3][]{%
   \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
@@ -333,10 +333,10 @@
 % Первая глава. Бытие.
 \input{111_bytie.tex}
 
-\hegchapter[{\em Вторая глава.} Наличное бытие]{Вторая глава}{НАЛИЧНОЕ БЫТИЕ}
+\hegchapter[Вторая глава]{Наличное бытие}
 \input{112_nalichnoe_bytie.tex}
 
-\hegchapter[{\em Третья глава.} Для-себя-бытие]{Третья глава}{ДЛЯ-СЕБЯ-БЫТИЕ}
+\hegchapter[Третья глава]{Для-себя-бытие}
 \input{113_dlya_sebya_bytie.tex}
 
 \hegpart[Второй отдел]{ВЕЛИЧИНА (КОЛИЧЕСТВО)}
@@ -344,12 +344,10 @@
 % Первая глава. Количество.
 \input{121_kolichestvo.tex}
 
-\hegchapter[{\em Вторая глава.} Определенное количество]%
-  {Вторая глава}{ОПРЕДЕЛЕННОЕ КОЛИЧЕСТВО}
+\hegchapter[Вторая глава]{Определенное количество}
 \input{122_opredelyonnoe_kolichestvo.tex}
 
-\hegchapter[{\em Третья глава.} Количественное отношение]%
-  {Третья глава}{КОЛИЧЕСТВЕННОЕ ОТНОШЕНИЕ}
+\hegchapter[Третья глава]{Количественное отношение}
 \input{123_kolichestvennoe_otnoshenie.tex}
 
 \hegpart[Третий отдел]{МЕРА}
@@ -357,12 +355,10 @@
 % Первая глава. Специфическое количество.
 \input{131_specificheskoe_kolichestvo.tex}
 
-\hegchapter[{\em Вторая глава.} Реальная мера]%
-  {Вторая глава}{РЕАЛЬНАЯ МЕРА}
+\hegchapter[Вторая глава]{Реальная мера}
 \input{132_realnaya_mera.tex}
 
-\hegchapter[{\em Третья глава.} Становление сущности]%
-  {Третья глава}{СТАНОВЛЕНИЕ СУЩНОСТИ}
+\hegchapter[Третья глава]{Становление сущности}
 \input{133_stanovlenie_suschnosti.tex}
 
 \backmatter
