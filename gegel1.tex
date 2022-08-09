@@ -66,18 +66,21 @@
 
 \chapterstyle{standard}
 
+\newcommand{\addtocspace}[1]{%
+  \addtocontents{toc}{\vspace{#1}}}
+
 \newcommand{\hegpart}[2][]{%
-  \addtocontents{toc}{\vspace{2mm}%
-    {\centering%
-      \normalsize\bfseries\em #1\\}}
-  \part[\small \MakeUppercase{#2}]%
+  \addtocontents{toc}{\vspace{4mm}%
+    {\centering\bfseries\em #1\\\vspace{2mm}}}
+  \part[\small\MakeUppercase{#2}]%
        {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries%
         #1}\nopagebreak\\\normalsize\MakeUppercase{#2}\end{Spacing}}}
 
 \newcommand{\hegchapter}[2][]{%
   \chapter[{\em #1.} #2]{%
     \fontsize{11}{18}\selectfont{\em\mdseries #1}\nopagebreak\\%
-    \MakeUppercase{#2}}}
+    \MakeUppercase{#2}}%
+    \addtocspace{1mm}}
 
 \newcommand{\hegremark}[3][]{%
   \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
@@ -165,7 +168,9 @@
 
 \let\oldpagenote\pagenote%
   \renewcommand{\pagenote}[1]{%
-  \textsuperscript{~(}\oldpagenote{#1}\textsuperscript{)}}
+  {\fontsize{8}{8}\selectfont%
+  \:\oldpagenote{#1}}}
+  %\textsuperscript{~(}\oldpagenote{#1}\textsuperscript{)}}}
 
 \let\oldfootnote\footnote%
   \renewcommand{\footnote}[1]{%
@@ -277,8 +282,8 @@
 \pagenumbering{Roman}
 \setcounter{page}{1}
 \renewcommand{\parttitlefont}{\large}
-\part[\normalsize{\em Ленин,} О значении воинствующего материализма]%
-     {{\em В.~И.~Ленин}\\{\bfseries О значении воинствующего материализма}}
+\part[\normalsize{\em Ленин,} О~значении воинствующего материализма]%
+     {{\em В.~И.~Ленин}\\{\bfseries О~значении воинствующего материализма}}
 \input{001_o_znachenii.tex}
 
 \cleardoublepage
@@ -292,7 +297,7 @@
   {\Huge\bfseries НАУКА ЛОГИКИ}
 \par}
 
-\addtocontents{toc}{\vspace{2mm}%
+\addtocontents{toc}{\vspace{4mm}%
   {\centering%
     \normalsize\bfseries\em Гегель <<НАУКА ЛОГИКИ>>\\%
   }%
@@ -326,13 +331,15 @@
 \thispagestyle{empty}
 \input{004_vvedenie.tex}
 
-\addtocontents{toc}{\vspace{2mm}%
-  {\centering%
-    \lsstyle\normalsize\bfseries Первая книга\\}}
+\addtocontents{toc}{\vspace{7mm}%
+  {\centering\lsstyle\normalsize\bfseries Первая книга\\}%
+   \vspace{2mm}}
 
 \part[\hspace{38mm}УЧЕНИЕ О БЫТИИ]%
      {\ \\\vspace{200pt}\Large\mdseries ПЕРВАЯ КНИГА\\\ \\
       \LARGE\bfseries УЧЕНИЕ О БЫТИИ}
+\addtocspace{2mm}
+
 \thispagestyle{empty}
 \cleardoublepage
 \section[С чего следует начинать науку]{С ЧЕГО СЛЕДУЕТ НАЧИНАТЬ НАУКУ}
@@ -385,7 +392,6 @@
 
 \chapter[\mdseries Примечания]{ПРИМЕЧАНИЯ}
 \input{142_primechanija.tex}
-
 
 \clearpage
 \tableofcontents*
