@@ -66,7 +66,8 @@
 
 \chapterstyle{standard}
 
-\setsubsubsecheadstyle{\normalsize\em}
+\newcommand{\styledsubsubsection}[2][]{%
+  \subsubsection[#1]{\normalsize\mdseries\em #2}}
 
 \newcommand{\addtocspace}[1]{%
   \addtocontents{toc}{\vspace{#1}}}
