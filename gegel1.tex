@@ -37,7 +37,7 @@
 %%%------------------------------------------------------------------------
 
 \maxsecnumdepth{section} % Subsections (and higher) are numbered
-\setsecnumdepth{section} % Empty space concentrates in bottom
+\setsecnumdepth{section}
 
 \makeatletter %
 \makechapterstyle{standard}{
@@ -71,7 +71,7 @@
 
 \newcommand{\hegpart}[2][]{%
   \addtocontents{toc}{\vspace{4mm}%
-    {\centering\bfseries\em #1\\\vspace{2mm}}}
+    {\centering\bfseries\em #1\\\vspace{2mm}}}%
   \part[\small\MakeUppercase{#2}]%
        {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries%
         #1}\nopagebreak\\\normalsize\MakeUppercase{#2}\end{Spacing}}}
@@ -79,11 +79,17 @@
 \newcommand{\hegchapter}[2][]{%
   \chapter[{\em #1.} #2]{%
     \fontsize{11}{18}\selectfont{\em\mdseries #1}\nopagebreak\\%
-    \MakeUppercase{#2}}%
+    \vspace{1mm}\\%
+    \MakeUppercase{#2}%
+    \vspace{2mm}\\}%
     \addtocspace{1mm}}
 
+\newcommand{\hegsection}[2][]{%
+  \section[#1]{\MakeUppercase{#2}}}
+
 \newcommand{\hegremark}[3][]{%
-  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
+  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\%
+  \vspace{1mm}\\%
   \footnotesize #3}}
 
 \setsecheadstyle{\normalfont\bfseries\centering}
