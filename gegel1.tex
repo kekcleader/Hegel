@@ -66,6 +66,8 @@
 
 \chapterstyle{standard}
 
+\setsubsubsecheadstyle{\normalsize\em}
+
 \newcommand{\addtocspace}[1]{%
   \addtocontents{toc}{\vspace{#1}}}
 
@@ -85,7 +87,7 @@
     \addtocspace{1mm}}
 
 \newcommand{\hegsection}[2][]{%
-  \section[#1]{\MakeUppercase{#2}}}
+  \section[#1]{\small\MakeUppercase{#2}}}
 
 \newcommand{\hegremark}[3][]{%
   \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\%
