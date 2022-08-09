@@ -37,7 +37,7 @@
 %%%------------------------------------------------------------------------
 
 \maxsecnumdepth{section} % Subsections (and higher) are numbered
-\setsecnumdepth{section}
+\setsecnumdepth{section} % Empty space concentrates in bottom
 
 \makeatletter %
 \makechapterstyle{standard}{
@@ -103,13 +103,13 @@
 \captionnamefont{\small\bfseries} % Font of the caption name
 \captiontitlefont{\small\normalfont} % Font of the caption text
 
-\changecaptionwidth          % Change the width of the caption
-\captionwidth{1\textwidth} %
+\changecaptionwidth % Change the width of the caption
+\captionwidth{1\textwidth}
 
 %%% ABSTRACT
 %%%------------------------------------------------------------------------
 
-\renewcommand{\abstractnamefont}{\normalfont\small\bfseries} % Font of abstract title
+\renewcommand{\abstractnamefont}{\normalfont\small\bfseries} % Abstract title
 \setlength{\absleftindent}{0.1\textwidth} % Width of abstract
 \setlength{\absrightindent}{\absleftindent}
 
@@ -120,13 +120,13 @@
 
 \makepagestyle{standard} % Make standard pagestyle
 
-\makeatletter                 % Define standard pagestyle
-\makeevenfoot{standard}{}{}{} %
-\makeoddfoot{standard}{}{}{}  %
+\makeatletter % Define standard pagestyle
+\makeevenfoot{standard}{}{}{}
+\makeoddfoot{standard}{}{}{}
 \makeevenhead{standard}{\bfseries\thepage\normalfont\qquad\small\leftmark}{}{}
 \makeoddhead{standard}{}{}{\small\rightmark\qquad\bfseries\thepage}
 % \makeheadrule{standard}{\textwidth}{\normalrulethickness}
-\makeatother                  %
+\makeatother
 
 \makeatletter
 \makepsmarks{standard}{
@@ -147,15 +147,15 @@
 
 \makeatletter
 \makeevenfoot{chap}{}{}{} % Define new chapter pagestyle
-\makeoddfoot{chap}{}{}{}  %
-\makeevenhead{chap}{}{}{}   %
-\makeoddhead{chap}{}{}{}    %
+\makeoddfoot{chap}{}{}{}
+\makeevenhead{chap}{}{}{}
+\makeoddhead{chap}{}{}{}
 % \makeheadrule{chap}{\textwidth}{\normalrulethickness}
 \makeatother
 
 \nouppercaseheads
-\pagestyle{standard}               % Choosing pagestyle and chapter pagestyle
-\aliaspagestyle{chapter}{chap} %
+\pagestyle{standard}   % Choosing pagestyle and chapter pagestyle
+\aliaspagestyle{chapter}{chap}
 
 %%% END NOTES
 %%%------------------------------------------------------------------------
