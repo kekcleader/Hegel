@@ -13,3 +13,31 @@
 Поиск длинных немецких слов:
 
 /[^-:.~{}()+\$^<>\[\] \\А-ЯЁёа-я]\{12\}
+
+
+Перевод PDF в серию PNG-файлов:
+
+pdftoppm -png -r 300 Gegel1970_1.pdf png2/page
+
+
+Разрезание PNG-листа пополам:
+
+convert -crop 50%x100% page-110.png page-110_split.png
+
+
+Разрезание многих PNG-листов пополам:
+
+mv png2/page-001.png .
+i=2; for f in png2/*.png; do
+  convert -crop 50%x100% $f png/a.png
+
+  iii=$(printf "%03d" $i);
+  mv png/a-0.png png/page-$iii.png
+  ((i++))
+
+  iii=$(printf "%03d" $i);
+  mv png/a-1.png png/page-$iii.png
+  ((i++))
+done
+cp page-001.png png
+mv page-001.png png2
