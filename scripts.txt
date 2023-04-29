@@ -49,3 +49,9 @@ mv page-001.png png2
 pngquant 2 -f --ext .png *.png
 (2 означает чёрно-белое, --ext .png означает "заменить оригиналы")
 
+
+Усечь изображение (для нового издания):
+
+convert page-012.png -crop 1690x2530+192+150 cropped.png
+
+
