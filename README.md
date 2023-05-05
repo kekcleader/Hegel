@@ -3,6 +3,7 @@
 # Наука логики
 * Подготовка издания книги
 * Сайты: [tehnokom.su](https://tehnokom.su), [r-p-w.ru](https://www.r-p-w.ru/)
+* [Средство механизации вычитки](https://github.com/kekcleader/ProofHegel)
 
 ## Установка необходимого программного обеспечения
 

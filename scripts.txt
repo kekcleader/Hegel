@@ -13,3 +13,45 @@
 Поиск длинных немецких слов:
 
 /[^-:.~{}()+\$^<>\[\] \\А-ЯЁёа-я]\{12\}
+
+
+Перевод PDF в серию PNG-файлов:
+
+pdftoppm -png -r 300 Gegel1970_1.pdf png2/page
+
+
+Разрезание PNG-листа пополам:
+
+convert -crop 50%x100% page-110.png page-110_split.png
+
+
+Разрезание многих PNG-листов пополам:
+
+mv png2/page-001.png .
+i=2; for f in png2/*.png; do
+  convert -crop 50%x100% $f png/a.png
+
+  iii=$(printf "%03d" $i);
+  mv png/a-0.png png/page-$iii.png
+  ((i++))
+
+  iii=$(printf "%03d" $i);
+  mv png/a-1.png png/page-$iii.png
+  ((i++))
+done
+cp page-001.png png
+mv page-001.png png2
+
+
+Значительное уменьшение веса изображений:
+
+(сначала убрать куда-нибудь иллюстрации)
+pngquant 2 -f --ext .png *.png
+(2 означает чёрно-белое, --ext .png означает "заменить оригиналы")
+
+
+Усечь изображение (для нового издания):
+
+convert page-012.png -crop 1690x2530+192+150 cropped.png
+
+
