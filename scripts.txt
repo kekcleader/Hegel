@@ -55,3 +55,8 @@ pngquant 2 -f --ext .png *.png
 convert page-012.png -crop 1690x2530+192+150 cropped.png
 
 
+Усечь множество изображений:
+
+for f in *.png; do convert $f -crop 1690x2530+192+150 ../new_2_png2/$f; done
+
+
