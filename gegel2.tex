@@ -8,40 +8,6 @@
 \setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
 
-%%% SECTIONAL DIVISIONS
-%%%------------------------------------------------------------------------
-
-\makeatletter %
-\makechapterstyle{standard2}{
-  \setlength{\beforechapskip}{0\baselineskip}
-  \setlength{\midchapskip}{1\baselineskip}
-  \setlength{\afterchapskip}{2\baselineskip}
-  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
-  \renewcommand{\chapnamefont}{\centering\normalfont\Large}
-  \renewcommand{\printchaptername}{\chapnamefont \@chapapp}
-  \renewcommand{\chapternamenum}{\space}
-  \renewcommand{\chapnumfont}{\normalfont\Large}
-  \renewcommand{\printchapternum}{\chapnumfont \thechapter}
-  \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
-  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
-  \renewcommand{\chaptitlefont}{\centering\bfseries\normalsize}
-  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
-  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
-
-  % Part titles
-  \renewcommand{\beforepartskip}{}
-  \renewcommand{\afterpartskip}{\bigskip}
-
-  \renewcommand{\clearforchapter}{}
-}
-\makeatother
-
-%\chapterstyle{standard2}
-
-\newcommand{\hegchaptertwo}[3][]{%
-  \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}%
-}
-
 %%% END NOTES
 %%%------------------------------------------------------------------------
 
@@ -95,30 +61,30 @@
 \clearpage
 \input{211_vidimost.tex}
 
-\chapter*{Вторая глава. Определённые сущности или определения рефлексии.}
+%\chapter*{Вторая глава. Определённые сущности или определения рефлексии.}
 \input{212_opredelenie.tex}
 
-\chapter*{Третья глава. Основание.}
+%\chapter*{Третья глава. Основание.}
 \input{213_osnovanie.tex}
 
-\part*{Второй отдел. Явление.}
-\chapter*{Первая глава. Существование.}
+%\part*{Второй отдел. Явление.}
+%\chapter*{Первая глава. Существование.}
 \input{221_suschestvovanie.tex}
 
-\chapter*{Вторая глава. Явление.}
+%\chapter*{Вторая глава. Явление.}
 \input{222_yavlenie.tex}
 
-\chapter*{Третья глава. Существенное Отношение.}
+%\chapter*{Третья глава. Существенное Отношение.}
 \input{223_suschestvennoe_otnoshenie.tex}
 
-\part*{Третий отдел. Действительность.}
-\chapter*{Первая глава. Абсолютное.}
+%\part*{Третий отдел. Действительность.}
+%\chapter*{Первая глава. Абсолютное.}
 \input{231_absolutnoe.tex}
 
-\chapter*{Вторая глава. Действительность.}
+%\chapter*{Вторая глава. Действительность.}
 \input{232_deystvitelnost.tex}
 
-\chapter*{Третья глава. Абсолютное отношение.}
+%\chapter*{Третья глава. Абсолютное отношение.}
 \input{233_absolutnoe_otnoshenie.tex}
 
 \backmatter

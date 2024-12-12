@@ -91,6 +91,30 @@
   \renewcommand{\clearforchapter}{}
 }
 
+% FIXME: временный стиль для 2 и 3 книги
+\makechapterstyle{standardtwo}{
+  \setlength{\beforechapskip}{0\baselineskip}
+  \setlength{\midchapskip}{1\baselineskip}
+  \setlength{\afterchapskip}{2\baselineskip}
+  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
+  \renewcommand{\chapnamefont}{\centering\normalfont\Large}
+  \renewcommand{\printchaptername}{\chapnamefont \@chapapp}
+  \renewcommand{\chapternamenum}{\space}
+  \renewcommand{\chapnumfont}{\normalfont\Large}
+  \renewcommand{\printchapternum}{\chapnumfont \thechapter}
+  \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
+  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
+  \renewcommand{\chaptitlefont}{\centering\bfseries\normalsize}
+  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
+
+  % Part titles
+  \renewcommand{\beforepartskip}{}
+  \renewcommand{\afterpartskip}{\bigskip}
+
+  \renewcommand{\clearforchapter}{}
+}
+
 \chapterstyle{standard}
 
 \newcommand{\styledsubsubsection}[2][]{%
