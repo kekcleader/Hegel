@@ -1,27 +1,6 @@
 \documentclass[b5paper, 11pt, twoside, onecolumn, openany]{memoir}
-
-%%% PACKAGES
-%%%------------------------------------------------------------------------
-
 \usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
-\usepackage[greek,english,main=russian]{babel}
-\usepackage[final,letterspace=150]{microtype} % Less badboxes
-\usepackage{bookmark}
-\usepackage{footnotehyper}
-\usepackage{multicol}
-\usepackage{fancyhdr} % Required by poemscol
-\usepackage{poemscol}
-\usepackage{geometry}
-\usepackage{pifont}
-
-% \usepackage{kpfonts} %Font
-
-\usepackage{amsmath,amssymb,mathtools} % Math
-
-% \usepackage{tikz} % Figures
-\usepackage{graphicx} % Include figures
-
+\usepackage{hegel}
 %%% PAGE LAYOUT
 %%%------------------------------------------------------------------------
 
@@ -29,18 +8,11 @@
 \setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
 
-\clubpenalty=10000
-\widowpenalty=10000
-\raggedbottom
-
 %%% SECTIONAL DIVISIONS
 %%%------------------------------------------------------------------------
 
-\maxsecnumdepth{section} % Subsections (and higher) are numbered
-\setsecnumdepth{section}
-
 \makeatletter %
-\makechapterstyle{standard}{
+\makechapterstyle{standard2}{
   \setlength{\beforechapskip}{0\baselineskip}
   \setlength{\midchapskip}{1\baselineskip}
   \setlength{\afterchapskip}{2\baselineskip}
@@ -64,178 +36,27 @@
 }
 \makeatother
 
-\chapterstyle{standard}
+%\chapterstyle{standard2}
 
-\newcommand{\hegchapter}[3][]{%
-  \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}}
-
-\newcommand{\hegremark}[3][]{%
-  \subsubsection[#1. #2]{\centering {\lsstyle\mdseries #1}\nopagebreak\\
-  \footnotesize #3}}
-
-\setsecheadstyle{\normalfont\bfseries\centering}
-\setsubsecheadstyle{\normalfont\normalsize\bfseries\centering}
-\setparaheadstyle{\normalfont\normalsize\bfseries}
-\setparaindent{0pt}\setafterparaskip{0pt}
-
-\usepackage{indentfirst}
-\setlength\parindent{6mm}
-
-%%% FLOATS AND CAPTIONS
-%%%------------------------------------------------------------------------
-
-\makeatletter % You do not need to write [htpb] all the time
-\renewcommand\fps@figure{htbp}
-\renewcommand\fps@table{htbp}
-\makeatother
-
-\captiondelim{\space } % A space between caption name and text
-\captionnamefont{\small\bfseries} % Font of the caption name
-\captiontitlefont{\small\normalfont} % Font of the caption text
-
-\changecaptionwidth          % Change the width of the caption
-\captionwidth{1\textwidth} %
-
-%%% ABSTRACT
-%%%------------------------------------------------------------------------
-
-\renewcommand{\abstractnamefont}{\normalfont\small\bfseries} % Font of abstract title
-\setlength{\absleftindent}{0.1\textwidth} % Width of abstract
-\setlength{\absrightindent}{\absleftindent}
-
-\tightlists
-
-%%% HEADER AND FOOTER
-%%%------------------------------------------------------------------------
-
-\makepagestyle{standard} % Make standard pagestyle
-
-\makeatletter                 % Define standard pagestyle
-\makeevenfoot{standard}{}{}{} %
-\makeoddfoot{standard}{}{}{}  %
-\makeevenhead{standard}{\bfseries\thepage\normalfont\qquad\small\leftmark}{}{}
-\makeoddhead{standard}{}{}{\small\rightmark\qquad\bfseries\thepage}
-% \makeheadrule{standard}{\textwidth}{\normalrulethickness}
-\makeatother                  %
-
-\makeatletter
-\makepsmarks{standard}{
-\createmark{chapter}{both}{nonumber}{\@chapapp\ }{ \quad }
-\createmark{chapter}{right}{nonumber}{}{ \quad }
-\createmark{section}{right}{nonumber}{}{ \quad }
-\createmark{subsection}{right}{nonumber}{}{ \quad }
-\createplainmark{toc}{both}{\contentsname}
-\createplainmark{lof}{both}{\listfigurename}
-\createplainmark{lot}{both}{\listtablename}
-\createplainmark{bib}{both}{\bibname}
-\createplainmark{index}{both}{\indexname}
-\createplainmark{glossary}{both}{\glossaryname}
+\newcommand{\hegchaptertwo}[3][]{%
+  \chapter[#1]{\fontsize{11}{18}\selectfont{\em\mdseries #2}\\#3}%
 }
-\makeatother                               %
-
-\makepagestyle{chap} % Make new chapter pagestyle
-
-\makeatletter
-\makeevenfoot{chap}{}{}{} % Define new chapter pagestyle
-\makeoddfoot{chap}{}{}{}  %
-\makeevenhead{chap}{}{}{}   %
-\makeoddhead{chap}{}{}{}    %
-% \makeheadrule{chap}{\textwidth}{\normalrulethickness}
-\makeatother
-
-\nouppercaseheads
-\pagestyle{standard}               % Choosing pagestyle and chapter pagestyle
-\aliaspagestyle{chapter}{chap} %
 
 %%% END NOTES
 %%%------------------------------------------------------------------------
-\makepagenote
-\continuousnotenums
-\notepageref
 
-\let\oldpagenote\pagenote%
+\let\oldpagenotetwo\pagenote%
   \renewcommand{\pagenote}[1]{%
-  \textsuperscript{~(}\oldpagenote{#1}\textsuperscript{)}}
+  \textsuperscript{~(}{\oldpagenote{#1}}\textsuperscript{)}}
 
-\let\oldfootnote\footnote%
-  \renewcommand{\footnote}[1]{%
-  \,\oldfootnote{~#1}}
-
-\renewcommand{\noteidinnotes}[2]{%
-  \hspace{9mm}\textsuperscript{#1}\hspace{1.5mm}}
-\renewcommand{\pageinnotes}[1]{%
-  К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
-
-\renewcommand*{\thefootnote}{\ding{93}}
-
-\renewcommand*{\footnoterule}{%
-  \kern-3pt%
-  \hrule width 0.17\columnwidth
-  \kern 2.6pt}
-
-\renewcommand*{\notedivision}{}
-
-\renewcommand*{\pagenotesubhead}[3]{}
-
-\renewcommand*{\pagenotesubheadstarred}[3]{}
-
-%%% TEXT
-%%%------------------------------------------------------------------------
-
-\renewcommand{\baselinestretch}{0.82}
-\setPagenoteSpacing{0.82}
-\setFloatSpacing{0.82}
-
-%%% NEW COMMANDS
-%%%------------------------------------------------------------------------
-
-\maxtocdepth{paragraph} % ToC depth
-\settocdepth{paragraph}
-\addto\captionsrussian{\renewcommand{\contentsname}{ОГЛАВЛЕНИЕ}}
-\setlength{\cftbeforepartskip}{0.5mm}
-
-\AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
-
-\usepackage{hyperref}   % Internal hyperlinks
 \hypersetup{
   pdfborder={0 0 0},    % No borders around internal hyperlinks
   pdfauthor={ФРА}       % author
 }
-\usepackage{memhfixc}
 
 \author{Г.~В.~Ф. Гегель}
 \title{Наука логики}
 \date{}
-
-\renewcommand{\partnumberline}[1]{} % Remove part number in ToC
-\renewcommand{\cftpartdotsep}{\cftdotsep} % Part dots in ToC
-\renewcommand{\chapternumberline}[1]{} % Remove chapter number in ToC
-\renewcommand{\cftchapterdotsep}{\cftdotsep} % Chapter dots in ToC
-
-\renewcommand{\printpartname}{}
-\renewcommand{\thepart}{}
-
-\renewcommand{\printchaptername}{}
-\renewcommand{\thechapter}{}
-
-\makeatletter
-\renewcommand{\@seccntformat}[1]{}
-\makeatother
-
-% Remove section numbers in ToC
-\let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
-\let\oldcftspn\cftsectionafterpnum% and of \cftsectionafterpnum
-\renewcommand*{\cftsectionfont}{%
-\let\oldnl\numberline% save definition of \numberline
-\renewcommand*{\numberline}[1]{}% change it
-\oldcftsf} % use original \cftsectionfont
-\renewcommand*{\cftsectionafterpnum}{%
-\let\numberline\oldnl% % restore orginal \numberline
-\oldcftspn} % use original \cftsectionafterpnum
-
-\cftpagenumbersoff{book}
-\renewcommand*{\cftbookfont}{\hfil}
-\renewcommand*{\cftbookafterpnum}{\hfil}
 
 \begin{document}
 
