@@ -1,4 +1,5 @@
 drafts_dir = Drafts
+foo = $(shell git checkout)
 branch = $(shell git branch --show-current)
 tags = $(shell git describe --tags --long --always --dirty)
 date = $(shell git --no-pager log -1 --date=short --decorate=short --pretty=format:"%cd" )
