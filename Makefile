@@ -6,6 +6,8 @@ date = $(shell git --no-pager log -1 --date=short --decorate=short --pretty=form
 
 all: tom1 tom2 tom3
 
+allg: tom1g tom2g tom3g cleand
+
 tom1:
 	pdflatex -interaction=nonstopmode gegel1.tex|tail -n 20; echo -e \\a
 
@@ -39,11 +41,11 @@ tom3v:
 .phony: clean cleanall cleand
 
 clean:
-	rm *.aux *.toc *.ent *.log
+	rm *.aux *.toc *.ent *.log *.fdb_latexmk *.fls *.gz
 
 cleand:
 	rm $(drafts_dir)/*.aux $(drafts_dir)/*.toc $(drafts_dir)/*.ent $(drafts_dir)/*.log $(drafts_dir)/*.idx $(drafts_dir)/*-dirty.pdf
 
-cleanall:
-	rm *.aux *.toc *.ent *.log *.pdf
+cleanall: clean
+	rm *.pdf
 
