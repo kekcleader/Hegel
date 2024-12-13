@@ -9,8 +9,6 @@
 \usepackage{bookmark}
 \usepackage{footnotehyper}
 \usepackage{multicol}
-\usepackage{fancyhdr} % Required by poemscol
-\usepackage{poemscol}
 \usepackage{geometry}
 \usepackage{pifont}
 
@@ -126,9 +124,9 @@
 \newcommand{\hegpart}[2][]{%
   \addtocontents{toc}{\vspace{4mm}%
     {\centering\bfseries\em #1\\\vspace{2mm}}}%
-  \part[\small\MakeUppercase{#2}]%
+  \part[\texorpdfstring{\MakeTextUppercase{\small#2}}{#1. #2}]%
        {\begin{Spacing}{1.6}\small\textsc{\lsstyle\mdseries%
-        #1}\nopagebreak\\\normalsize\MakeUppercase{#2}\end{Spacing}}}
+        #1}\nopagebreak\\\normalsize\MakeTextUppercase{#2}\end{Spacing}}}
 
 \newcommand{\hegchapter}[2][]{%
   \chapter[{\em #1.} #2]{%
