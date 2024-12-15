@@ -1,15 +1,14 @@
 ## Деление книг по заголовкам
 
-| Entry    | Level | Должно быть | По факту  |   |
-|----------|------|-------------|-----------|---|
-| book     |  -2   | Том         |           |   |
-|  part    |  -1   | Книга       | Отдел     |   |
-|  chapter |   0   | Отдел       | Глава     |   |
-| section  |   1   | Глава       | А. hegsection       |   |
-|subsection|   2   | А.          | 1. a) "Переход" |   |
-|subsubsection|3   | a) 1.       | α. styledsubsubsection hegremark  |   |
-|paragraph |   4   | α) "Переход" Прим.|   |   |
-|subparagraph| 5   | Прим.       |   |   |
-|figure/table|(1)  |             |   |   |
-|subfigure/table|(2)|            |   |   |
-
+| Entry    | Level | По факту        |Новые разделы| Должно быть |  I | II | III|
+|----------|-------|-----------------|-------------|-------------|----|----|----|
+| book     |  -2   |                 |             | Том         |    |    |    |
+|  part    |  -1   | Отдел           |             | Книга       | ❌ | ❌ | ❌ |
+|  chapter |   0   | Глава           |             | Отдел       | ❌ | ❌ | ❌ |
+| section  |   1   | А. hegsection   |             | Глава       | ❌ | ❌ | ❌ |
+|subsection|   2   | 1. a) "Переход" |             | А.          | ❌ | ❌ | ❌ |
+|subsubsection|3| α. styledsubsubsection hegremark||a) 1.        | ❌ | ❌ | ❌ |
+|paragraph |   4   |  |subsubsubsecton remark| α) "Переход" Прим.| ❌ | ❌ | ❌ |
+|subparagraph| 5   |                 |subremark    | Прим.       | ❌ | ❌ | ❌ |
+|figure/table|(1)  |
+|subfigure/table|(2)|

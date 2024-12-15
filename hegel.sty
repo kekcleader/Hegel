@@ -63,8 +63,8 @@
 %%% SECTIONAL DIVISIONS
 %%%------------------------------------------------------------------------
 
-\maxsecnumdepth{section} % Subsections (and higher) are numbered
-\setsecnumdepth{section}
+\maxsecnumdepth{subparagraph}
+\setsecnumdepth{subsubsection}
 
 \makechapterstyle{standard}{
   \setlength{\beforechapskip}{0.8\baselineskip}
@@ -150,6 +150,111 @@
 \setsubsecheadstyle{\normalfont\normalsize\bfseries\centering}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
+
+%%---\subsubsubsection
+\newcounter{subsubsubsection}[subsubsection] \setcounter{subsubsubsection}{1}
+\renewcommand*{\thesubsubsubsection}{\thesubsubsection.\@arabic\c@subsubsubsection}
+\newcommand{\subsubsubsection}{% line3830
+  \subsubsubsehook%
+  \@startsection{subsubsubsection}{4}%  level 4
+      {\subsubsubseindent}%            heading indent
+      {\beforesubsubsubseskip}%        skip before the heading
+      {\aftersubsubsubseskip}%         skip after the heading
+      {\normalfont\subsubsubseheadstyle}} % font
+\newcommand{\subsubsubsehook}{}
+\newcommand{\setsubsubsubsehook}[1]{\renewcommand{\subsubsubsehook}{#1}}
+\newlength{\subsubsubseindent}
+\newcommand{\setsubsubsubseindent}[1]{%
+            \setlength{\subsubsubseindent}{#1}}
+\setsubsubsubseindent{\z@}
+\newskip\beforesubsubsubseskip
+\newcommand{\setbeforesubsubsubseskip}[1]{%
+            \setlength{\beforesubsubsubseskip}{#1}}
+\setbeforesubsubsubseskip{-3.25ex \@plus -1ex \@minus -.2ex}
+\newskip\aftersubsubsubseskip
+\newcommand{\setaftersubsubsubseskip}[1]{%
+            \setlength{\aftersubsubsubseskip}{#1}}
+\setaftersubsubsubseskip{1.5ex \@plus .2ex}
+\newcommand{\subsubsubseheadstyle}{}
+\newcommand{\setsubsubsubseheadstyle}[1]{%
+            \renewcommand{\subsubsubseheadstyle}{#1}}
+\setsubsubsubseheadstyle{\normalsize\bfseries\memRTLraggedright}
+\newlistentry[subsubsection]{subsubsubsection}{toc}{3}
+  \cftsetindents{subsubsubsection}{12.0em}{6.0em}
+\newcommand{\subsubsubsectionmark}[1]{}
+
+%%---\remark
+\newcounter{remark}[subsubsection] \setcounter{remark}{1}
+\renewcommand*{\theremark}{\@arabic\c@remark}
+\newcommand{\remark}{% line3830
+  \remhook%
+  \@startsection{remark}{4}%  level 4
+      {\remindent}%            heading indent
+      {\beforeremskip}%        skip before the heading
+      {\afterremskip}%         skip after the heading
+      {\normalfont\remheadstyle}} % font
+\newcommand{\remhook}{}
+\newcommand{\setremhook}[1]{\renewcommand{\remhook}{#1}}
+\newlength{\remindent}
+\newcommand{\setremindent}[1]{%
+            \setlength{\remindent}{#1}}
+\setremindent{\z@}
+\newskip\beforeremskip
+\newcommand{\setbeforeremskip}[1]{%
+            \setlength{\beforeremskip}{#1}}
+\setbeforeremskip{-3.25ex \@plus -1ex \@minus -.2ex}
+\newskip\afterremskip
+\newcommand{\setafterremskip}[1]{%
+            \setlength{\afterremskip}{#1}}
+\setafterremskip{1.5ex \@plus .2ex}
+\newcommand{\remheadstyle}{}
+\newcommand{\setremheadstyle}[1]{%
+            \renewcommand{\remheadstyle}{#1}}
+\setremheadstyle{\lsstyle\mdseries\centering}
+\newlistentry[subsubsection]{remark}{toc}{3}
+  \cftsetindents{remark}{12.0em}{0.75em}
+\newcommand{\remarkmark}[1]{}
+\setremhook{\setsecnumformat{Примечание\ \csname the##1\endcsname.\ }}
+\renewcommand*{\cftremarkname}{Примечание\ }
+\renewcommand*{\cftremarkaftersnum}{.}
+\renewcommand*{\cftremarkaftersnumb}{\ }
+
+
+%%---\subremark
+\newcounter{subremark}[subsubsubsection] \setcounter{subremark}{1}
+\renewcommand*{\thesubremark}{\@arabic\c@subremark}
+\newcommand{\subremark}{% line3830
+  \subrehook%
+  \@startsection{subremark}{5}%  level 5
+      {\subreindent}%            heading indent
+      {\beforesubreskip}%        skip before the heading
+      {\aftersubreskip}%         skip after the heading
+      {\normalfont\subreheadstyle}} % font
+\newcommand{\subrehook}{}
+\newcommand{\setsubrehook}[1]{\renewcommand{\subrehook}{#1}}
+\newlength{\subreindent}
+\newcommand{\setsubreindent}[1]{%
+            \setlength{\subreindent}{#1}}
+\setsubreindent{\z@}
+\newskip\beforesubreskip
+\newcommand{\setbeforesubreskip}[1]{%
+            \setlength{\beforesubreskip}{#1}}
+\setbeforesubreskip{-3.25ex \@plus -1ex \@minus -.2ex}
+\newskip\aftersubreskip
+\newcommand{\setaftersubreskip}[1]{%
+            \setlength{\aftersubreskip}{#1}}
+\setaftersubreskip{1.5ex \@plus .2ex}
+\newcommand{\subreheadstyle}{}
+\newcommand{\setsubreheadstyle}[1]{%
+            \renewcommand{\subreheadstyle}{#1}}
+\setsubreheadstyle{\lsstyle\mdseries\centering}
+\newlistentry[subsubsubsection]{subremark}{toc}{4}
+  \cftsetindents{subremark}{13.0em}{0.75em}
+\newcommand{\subremarkmark}[1]{}
+\setsubrehook{\setsecnumformat{Примечание\ \csname the##1\endcsname.\ }}
+\renewcommand*{\cftsubremarkname}{Примечание\ }
+\renewcommand*{\cftsubremarkaftersnum}{.}
+\renewcommand*{\cftsubremarkaftersnumb}{\ }
 
 \usepackage{indentfirst}
 \setlength\parindent{6mm}
@@ -260,8 +365,8 @@
 
 \newcommand{\hm}[1]{#1\nobreak\discretionary{}{\hbox{\ensuremath{#1}}}{}}
 
-\maxtocdepth{paragraph} % ToC depth
-\settocdepth{paragraph}
+\maxtocdepth{subparagraph} % ToC depth
+\settocdepth{subparagraph}
 \addto\captionsrussian{\renewcommand{\contentsname}{ОГЛАВЛЕНИЕ}}
 \setlength{\cftbeforepartskip}{0.5mm}
 
@@ -283,7 +388,7 @@
 \renewcommand{\printchaptername}{}
 \renewcommand{\thechapter}{}
 
-\renewcommand{\@seccntformat}[1]{}
+%\renewcommand{\@seccntformat}[1]{}
 
 % Remove section numbers in ToC
 \let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
