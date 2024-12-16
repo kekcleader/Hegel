@@ -227,14 +227,15 @@
             \renewcommand{\remheadstyle}{#1}}
 \newcommand*{\shortcenter}[1]{%
   \sethangfrom{\noindent  ##1}%
-  \normalfont\boldmath\bfseries\small%
+  \normalfont\boldmath\bfseries\footnotesize%
   \centering\hfil\parbox{0.8\textwidth}{\centering #1}%
 }
 \setremheadstyle{\shortcenter}
 \newlistentry[subsubsection]{subsubremark}{toc}{3}
   \cftsetindents{subsubremark}{10.0em}{0.8em}
 \newcommand{\subsubremarkmark}[1]{}
-\newcommand\remarksecnumformatPre{\normalsize\lsstyle\mdseries\centering}
+\newcommand\remarksecnumformatPre{%
+        \normalsize\lsstyle\mdseries\centering\vspace{1mm}}
 \newcommand\remarksecnumname{Примечание\ }
 \newcommand\subsubremarksecnumformat{{\remarksecnumformatPre\remarksecnumname\thesubsubremark\par}}
 \renewcommand{\cftsubsubremarkname}{\remarksecnumname}
