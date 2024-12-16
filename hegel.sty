@@ -197,7 +197,8 @@
     \ifblank{#1}{% Нет нумерации нет заголовка
       \subsubremarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
     }{% Нет нумерации есть заголовок
-      \subsubremarkT[Примечание. #1]{{\remarksecnumformatPre{Примечание}\\}{[#1]}}
+      \subsubremarkT[Примечание. #1]{{%
+          \remarksecnumformatPre{Примечание\remarksecnumSkip}\\}{[#1]}}
     }
   }
 }
@@ -235,9 +236,12 @@
   \cftsetindents{subsubremark}{10.0em}{0.8em}
 \newcommand{\subsubremarkmark}[1]{}
 \newcommand\remarksecnumformatPre{%
-        \normalsize\lsstyle\mdseries\centering\vspace{1mm}}
+        \normalsize\lsstyle\mdseries\centering}
 \newcommand\remarksecnumname{Примечание\ }
-\newcommand\subsubremarksecnumformat{{\remarksecnumformatPre\remarksecnumname\thesubsubremark\par}}
+\newcommand\remarksecnumSkip{\vspace{1mm}}
+\newcommand\subsubremarksecnumformat{{%
+    \remarksecnumformatPre\remarksecnumname%
+    \thesubsubremark\remarksecnumSkip\par}}
 \renewcommand{\cftsubsubremarkname}{\remarksecnumname}
 \renewcommand*{\cftsubsubremarkaftersnum}{.}
 \renewcommand*{\cftsubsubremarkaftersnumb}{\enspace}
