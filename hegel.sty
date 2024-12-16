@@ -186,7 +186,22 @@
 %%---\remark
 \newcounter{remark}[subsubsection] \setcounter{remark}{1}
 \renewcommand*{\theremark}{\@arabic\c@remark}
-\newcommand{\remark}{% line3830
+\newcommand{\remark}[1]{%
+  \ifnumgreater{\value{secnumdepth}}{3}{%
+    \ifblank{#1}{% Есть нумерация нет заголовка
+      \remarkT{}
+    }{% Есть нумерация есть заголовок
+      \remarkT[{#1}]{[{#1}]}
+    }
+  }{
+    \ifblank{#1}{% Нет нумерации нет заголовка
+      \remarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
+    }{% Нет нумерации есть заголовок
+      \remarkT[Примечание. #1]{{\remarksecnumformatPre{Примечание}\\}{[#1]}}
+    }
+  }
+}
+\newcommand{\remarkT}{% line3830
   \remhook%
   \@startsection{remark}{4}%  level 4
       {\remindent}%            heading indent
@@ -210,14 +225,21 @@
 \newcommand{\remheadstyle}{}
 \newcommand{\setremheadstyle}[1]{%
             \renewcommand{\remheadstyle}{#1}}
-\setremheadstyle{\lsstyle\mdseries\centering}
+\newcommand*{\shortcenter}[1]{%
+  \sethangfrom{\noindent  ##1}%
+  \normalfont\boldmath\bfseries\small%
+  \centering\hfil\parbox{0.8\textwidth}{\centering #1}%
+}
+\setremheadstyle{\shortcenter}
 \newlistentry[subsubsection]{remark}{toc}{3}
-  \cftsetindents{remark}{12.0em}{0.75em}
+  \cftsetindents{remark}{10.0em}{0.8em}
 \newcommand{\remarkmark}[1]{}
-\newcommand\remarksecnumformat{Примечание\enspace\theremark.\enspace}
-\renewcommand*{\cftremarkname}{Примечание\ }
+\newcommand\remarksecnumformatPre{\normalsize\lsstyle\mdseries\centering}
+\newcommand\remarksecnumname{Примечание\ }
+\newcommand\remarksecnumformat{{\remarksecnumformatPre\remarksecnumname\theremark\par}}
+\renewcommand{\cftremarkname}{\remarksecnumname}
 \renewcommand*{\cftremarkaftersnum}{.}
-\renewcommand*{\cftremarkaftersnumb}{\ }
+\renewcommand*{\cftremarkaftersnumb}{\enspace}
 
 
 %%---\subremark
@@ -249,10 +271,10 @@
             \renewcommand{\subreheadstyle}{#1}}
 \setsubreheadstyle{\lsstyle\mdseries\centering}
 \newlistentry[subsubsubsection]{subremark}{toc}{4}
-  \cftsetindents{subremark}{13.0em}{0.75em}
+  \cftsetindents{subremark}{11.0em}{0.8em}
 \newcommand{\subremarkmark}[1]{}
 \newcommand\subremarksecnumformat{Примечание\enspace\thesubremark.\enspace}
-\renewcommand*{\cftsubremarkname}{Примечание\ }
+\renewcommand*{\cftsubremarkname}{Примечание\enspace}
 \renewcommand*{\cftsubremarkaftersnum}{.}
 \renewcommand*{\cftsubremarkaftersnumb}{\ }
 
