@@ -242,41 +242,39 @@
 \renewcommand*{\cftsubsubremarkaftersnumb}{\enspace}
 
 
-%%---\subremark
-\newcounter{subremark}[subsubsubsection] \setcounter{subremark}{1}
-\renewcommand*{\thesubremark}{\@arabic\c@subremark}
-\newcommand{\subremark}{% line3830
-  \subrehook%
-  \@startsection{subremark}{5}%  level 5
-      {\subreindent}%            heading indent
-      {\beforesubreskip}%        skip before the heading
-      {\aftersubreskip}%         skip after the heading
-      {\normalfont\subreheadstyle}} % font
-\newcommand{\subrehook}{}
-\newcommand{\setsubrehook}[1]{\renewcommand{\subrehook}{#1}}
-\newlength{\subreindent}
-\newcommand{\setsubreindent}[1]{%
-            \setlength{\subreindent}{#1}}
-\setsubreindent{\z@}
-\newskip\beforesubreskip
-\newcommand{\setbeforesubreskip}[1]{%
-            \setlength{\beforesubreskip}{#1}}
-\setbeforesubreskip{-3.25ex \@plus -1ex \@minus -.2ex}
-\newskip\aftersubreskip
-\newcommand{\setaftersubreskip}[1]{%
-            \setlength{\aftersubreskip}{#1}}
-\setaftersubreskip{1.5ex \@plus .2ex}
-\newcommand{\subreheadstyle}{}
-\newcommand{\setsubreheadstyle}[1]{%
-            \renewcommand{\subreheadstyle}{#1}}
-\setsubreheadstyle{\lsstyle\mdseries\centering}
-\newlistentry[subsubsubsection]{subremark}{toc}{4}
-  \cftsetindents{subremark}{11.0em}{0.8em}
-\newcommand{\subremarkmark}[1]{}
-\newcommand\subremarksecnumformat{Примечание\enspace\thesubremark.\enspace}
-\renewcommand*{\cftsubremarkname}{Примечание\enspace}
-\renewcommand*{\cftsubremarkaftersnum}{.}
-\renewcommand*{\cftsubremarkaftersnumb}{\ }
+%%---\subsubsubremark
+\newcounter{subsubsubremark}[subsubsubsection] \setcounter{subsubsubremark}{1}
+\renewcommand*{\thesubsubsubremark}{\@arabic\c@subsubsubremark}
+\newcommand{\subsubsubremark}[1]{%
+  \ifnumgreater{\value{secnumdepth}}{4}{%
+    \ifblank{#1}{% Есть нумерация нет заголовка
+      \subsubsubremarkT{}
+    }{% Есть нумерация есть заголовок
+      \subsubsubremarkT[{#1}]{[{#1}]}
+    }
+  }{
+    \ifblank{#1}{% Нет нумерации нет заголовка
+      \subsubsubremarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
+    }{% Нет нумерации есть заголовок
+      \subsubsubremarkT[Примечание. #1]{{\remarksecnumformatPre{Примечание}\\}{[#1]}}
+    }
+  }
+}
+\newcommand{\subsubsubremarkT}{% line3830
+  \remhook%
+  \@startsection{subsubsubremark}{5}%  level 5
+                {\remindent}%            heading indent
+                {\beforeremskip}%        skip before the heading
+                {\afterremskip}%         skip after the heading
+                {\normalfont\remheadstyle}} % font
+\newlistentry[subsubsubsection]{subsubsubremark}{toc}{4}
+  \cftsetindents{subsubsubremark}{11.0em}{0.8em}
+\newcommand{\subsubsubremarkmark}[1]{}
+\newcommand\subsubsubremarksecnumformat{%
+    {\remarksecnumformatPre\remarksecnumname\thesubsubsubremark\par}}
+\renewcommand*{\cftsubsubsubremarkname}{\remarksecnumname}
+\renewcommand*{\cftsubsubsubremarkaftersnum}{.}
+\renewcommand*{\cftsubsubsubremarkaftersnumb}{\enspace}
 
 %-- Формат номера раздела по умолчанию
 \setsecnumformat{%
