@@ -115,9 +115,6 @@
 
 \chapterstyle{standard}
 
-\newcommand{\styledsubsubsection}[2][]{%
-  \subsubsection[#1]{\normalsize\mdseries\em #2}}
-
 \newcommand{\addtocspace}[1]{%
   \addtocontents{toc}{\vspace{#1}}}
 
@@ -153,8 +150,19 @@
 
 %%---\subsubsubsection
 \newcounter{subsubsubsection}[subsubsection] \setcounter{subsubsubsection}{1}
-\renewcommand*{\thesubsubsubsection}{\thesubsubsection.\@arabic\c@subsubsubsection}
-\newcommand{\subsubsubsection}{% line3830
+\newcommand{\subsubsubsectiongreek}{%
+    \renewcommand{\thesubsubsubsection}{%
+%        \foreignlanguage{greek}{\alph{subsubsubsection}})}%
+    \greeknumeral{\value{subsubsubsection}})}%
+    \renewcommand\subsubsubsectionsecnumformat{%
+        \textls[0]{\upshape\thesubsubsubsection}\ }%
+    \setsubsubsubseheadstyle{\footnotesize\itshape\centering\textls[100]}%
+    \subsubsubsectionT}
+\newcommand{\subsubsubsection}{%
+    \renewcommand{\thesubsubsubsection}{\@arabic\c@subsubsubsection.}%
+    \setsubsubsubseheadstyle{\normalsize\bfseries\centering}%
+    \subsubsubsectionT}
+\newcommand{\subsubsubsectionT}{% line3830
   \subsubsubsehook%
   \@startsection{subsubsubsection}{4}%  level 4
       {\subsubsubseindent}%            heading indent
@@ -179,9 +187,13 @@
 \newcommand{\setsubsubsubseheadstyle}[1]{%
             \renewcommand{\subsubsubseheadstyle}{#1}}
 \setsubsubsubseheadstyle{\normalsize\bfseries\memRTLraggedright}
+\newcommand\subsubsubsectionsecnumformat{%
+    \csname thesubsubsubsection\endcsname\quad}
 \newlistentry[subsubsection]{subsubsubsection}{toc}{3}
-  \cftsetindents{subsubsubsection}{12.0em}{6.0em}
-\newcommand{\subsubsubsectionmark}[1]{}
+\cftsetindents{subsubsubsection}{10.0em}{0.8em}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\renewcommand*{\cftsubsubsubsectionaftersnumb}{\enspace}
+
 
 %%---\subsubremark
 \newcounter{subsubremark}[subsubsection] \setcounter{subsubremark}{1}
