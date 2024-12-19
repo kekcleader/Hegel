@@ -8,7 +8,7 @@
 | section  |   1   | А. hegsection   |             | Глава       | ❌ | ❌ | ❌ |
 |subsection|   2   | 1. a) "Переход" |             | А.          | ❌ | ❌ | ❌ |
 |          |   3   | hegremark       |subremark    | Прим.       | ❌ | ❌ | ❌ |
-|subsubsection|3| α. ~~styledsubsubsection~~ |     | a) 1.       | ✅ | ❌ | ❌ |
+|subsubsection|3| α. ~~styledsubsubsection~~ |     | a) 1.       | ✅ | ✅ | ❌ |
 |paragraph |   4   |           |subsubsubsecton | α) 1. "Переход"| ✅ |    | ✅ |
 |          |   4   |                 | subsubremark| Прим.       | ✅ | ✅ |    |
 |subparagraph| 5   |                |subsubsubremark| Прим.      | ✅ |    |    |
