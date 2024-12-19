@@ -148,6 +148,23 @@
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
 
+%%---\subsubsection
+\let\subsubsectionT\subsubsection
+
+\renewcommand\subsubsection{%
+    \renewcommand{\thesubsubsection}{\@arabic\c@subsubsection.}%
+    \subsubsectionT}%
+\newcommand\subsubsectionalph{%
+    \renewcommand{\thesubsubsection}{\@alph\c@subsubsection)}%
+    \subsubsectionT}%
+
+\newcommand\subsubsectionsecnumformat{\thesubsubsection.\ }
+\setsubsubsecheadstyle{\normalsize\bfseries\centering}
+\renewcommand\subsubsectionsecnumformat{\thesubsubsection\enspace}%
+\cftsetindents{subsubsection}{8.0em}{0.8em}
+\renewcommand{\cftsubsubsectionaftersnum}{}%
+\renewcommand{\cftsubsubsectionaftersnumb}{\enspace}
+
 %%---\subsubsubsection
 \newcounter{subsubsubsection}[subsubsection] \setcounter{subsubsubsection}{1}
 \newcommand{\subsubsubsectiongreek}{%
