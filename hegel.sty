@@ -186,8 +186,7 @@
 \newcounter{subsubsubsection}[subsubsection] \setcounter{subsubsubsection}{1}
 \newcommand{\subsubsubsectiongreek}{%
     \renewcommand{\thesubsubsubsection}{%
-%        \foreignlanguage{greek}{\alph{subsubsubsection}})}%
-    \greeknumeral{\value{subsubsubsection}})}%
+        \foreignlanguage{greek}{\singlegreek{\value{subsubsubsection}}})}%
     \renewcommand\subsubsubsectionsecnumformat{%
         \textls[0]{\upshape\thesubsubsubsection}\ }%
     \setsubsubsubseheadstyle{\footnotesize\itshape\centering\textls[100]}%
@@ -530,6 +529,13 @@
   {\centering \raisebox{0pt}[1.5ex][1.5ex]{\rule{0.9cm}{0.4pt}} \par}
 }
 
+\newcommand*{\singlegreek}[1]{%
+\ifcase #1\or\textalpha\or\textbeta\or\textgamma\or\textdelta\or\textepsilon%
+\or\textzeta\or\texteta\or\texttheta\or\textiota\or\textkappa\or\textlambda%
+\or\textmu\or\textnu\or\textxi\or o\or\textpi\or\textvarrho\or\textsigma%
+\or\texttau\or\textupsilon\or\textphi\or\textchi\or\textpsi\or\textomega%
+\else\@ctrerr\fi
+}
 \newcommand*{\rufemOrdinal}[1]{%
 \ifcase #1\or{Первая}\or{Вторая}\or{Третья}\or{Четвёртая}\or{Пятая}\or{Шестая}%
 \or{Седьмая}\or{Восьмая}\or{Девятая}\or{Десятая}\else#1\fi%
