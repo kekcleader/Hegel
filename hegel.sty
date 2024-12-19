@@ -212,6 +212,43 @@
 \renewcommand*{\cftsubsubsubsectionaftersnumb}{\enspace}
 
 
+%%---\subremark
+\newcounter{subremark}[subsection] \setcounter{subremark}{1}
+\renewcommand*{\thesubremark}{\@arabic\c@subremark}
+\newcommand{\subremark}[1]{%
+  \ifnumgreater{\value{secnumdepth}}{2}{%
+    \ifblank{#1}{% Есть нумерация нет заголовка
+      \subremarkT{}
+    }{% Есть нумерация есть заголовок
+      \subremarkT[{#1}]{[{#1}]}
+    }
+  }{
+    \ifblank{#1}{% Нет нумерации нет заголовка
+      \subremarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
+    }{% Нет нумерации есть заголовок
+      \subremarkT[Примечание. #1]{{%
+          \remarksecnumformatPre{Примечание\remarksecnumSkip}\\}{[#1]}}
+    }
+  }
+}
+\newcommand{\subremarkT}{% line3830
+  \remhook%
+  \@startsection{subremark}{3}%          level 3
+                {\remindent}%            heading indent
+                {\beforeremskip}%        skip before the heading
+                {\afterremskip}%         skip after the heading
+                {\normalfont\remheadstyle}} % font
+\newlistentry[subsection]{subremark}{toc}{2}
+  \cftsetindents{subremark}{8.0em}{0.8em}
+\newcommand{\subremarkmark}[1]{}
+\newcommand\subremarksecnumformat{%
+    {\remarksecnumformatPre\remarksecnumname\thesubremark%
+    \remarksecnumSkip\par}}
+\renewcommand*{\cftsubremarkname}{\remarksecnumname}
+\renewcommand*{\cftsubremarkaftersnum}{.}
+\renewcommand*{\cftsubremarkaftersnumb}{\enspace}
+
+
 %%---\subsubremark
 \newcounter{subsubremark}[subsubsection] \setcounter{subsubremark}{1}
 \renewcommand*{\thesubsubremark}{\@arabic\c@subsubremark}
