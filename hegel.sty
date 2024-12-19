@@ -2,22 +2,22 @@
 
 %%% PACKAGES
 %%%------------------------------------------------------------------------
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[greek,english,main=russian]{babel}
+\RequirePackage[final,letterspace=150]{microtype} % Less badboxes
+\RequirePackage{bookmark}
+\RequirePackage{footnotehyper}
+\RequirePackage{multicol}
+\RequirePackage{geometry}
+\RequirePackage{pifont}
 
-\usepackage[T2A]{fontenc}
-\usepackage[greek,english,main=russian]{babel}
-\usepackage[final,letterspace=150]{microtype} % Less badboxes
-\usepackage{bookmark}
-\usepackage{footnotehyper}
-\usepackage{multicol}
-\usepackage{geometry}
-\usepackage{pifont}
+% \RequirePackage{kpfonts} %Font
 
-% \usepackage{kpfonts} %Font
+\RequirePackage{amsmath,amssymb,mathtools} % Math
 
-\usepackage{amsmath,amssymb,mathtools} % Math
-
-% \usepackage{tikz} % Figures
-\usepackage{graphicx} % Include figures
+% \RequirePackage{tikz} % Figures
+\RequirePackage{graphicx} % Include figures
 
 % Отметка о версии черновика на каждой странице
 % Чтобы работало надо в своей локальной копии по инструкции
@@ -44,7 +44,7 @@
 % executable.
 %\ifnumequal{\value{draft}}{1}{% Черновик
    \IfFileExists{.git/gitHeadInfo.gin}{
-      \usepackage[mark,pcount]{gitinfo2}
+      \RequirePackage[mark,pcount]{gitinfo2}
       \renewcommand{\gitMark}{rev.\gitAbbrevHash\ \gitDirty\quad{}branch: \gitBranch\quad{}tags: \gitTags\\\gitCommitterIsoDate}
    }{}
 %}{}
@@ -322,7 +322,7 @@
 }
 
 
-\usepackage{indentfirst}
+\RequirePackage{indentfirst}
 \setlength\parindent{6mm}
 
 %%% FLOATS AND CAPTIONS
@@ -438,8 +438,8 @@
 
 \AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
 
-\usepackage{hyperref}   % Internal hyperlinks
-\usepackage{memhfixc}
+\RequirePackage{hyperref}   % Internal hyperlinks
+\RequirePackage{memhfixc}
 
 
 
