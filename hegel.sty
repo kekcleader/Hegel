@@ -140,9 +140,16 @@
 
 
 \setsecheadstyle{\normalfont\bfseries\centering}
-\setsubsecheadstyle{\normalfont\normalsize\bfseries\centering}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
+
+%---subsection
+\setsubsecheadstyle{\normalfont\small\bfseries\centering\MakeTextUppercase}
+\newcommand\subsectionsecnumformat{\thesubsection.\ }
+\renewcommand*{\thesubsection}{\@Alph\c@subsection}
+\cftsetindents{subsection}{3.8em}{0.8em}
+\renewcommand*{\cftsubsectionaftersnum}{.}
+\renewcommand*{\cftsubsectionaftersnumb}{\enspace}
 
 %%---\subsubsection
 \let\subsubsectionT\subsubsection
