@@ -70,6 +70,7 @@
 
 \pagestyle{plain}
 
+\setsecnumdepth{section}
 \section[Предисловие к первому изданию]{\large ПРЕДИСЛОВИЕ К ПЕРВОМУ ИЗДАНИЮ}
 \thispagestyle{empty}
 \input{002_predislovie.tex}
@@ -97,10 +98,12 @@
 
 \thispagestyle{empty}
 \cleardoublepage
-\section[С~чего следует начинать науку]{С~ЧЕГО СЛЕДУЕТ НАЧИНАТЬ НАУКУ}
+\setsecnumdepth{subsection}
+\subsubsection{С~чего следует начинать науку}
 \pagestyle{plain}
 \input{101_s_chego.tex}
 
+\setsecnumdepth{subsubsection}
 \hegpart[Первый отдел]{Определённость (качество)}
 
 % Первая глава. Бытие.
