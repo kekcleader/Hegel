@@ -137,11 +137,27 @@
 
 
 
-\setsecheadstyle{\normalfont\bfseries\centering}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
 \setparaindent{0pt}\setafterparaskip{0pt}
+%%---\section
+\newcommand*\sechd[1]{%
+\sethangfrom{\noindent  ##1}%
+\normalfont\Large\bfseries%
+\centering\hfil\parbox{0.8\textwidth}{\centering\MakeTextUppercase{#1}}%
+}
+\setsecheadstyle{\sechd}
+\renewcommand*{\thesection}{\rufemOrdinal{\value{section}} глава}
+\newcommand\sectionsecnumformat{{\normalfont\footnotesize\itshape\thesection}\vspace{1ex}\par}
+\let\oldcftsf\cftsectionfont
+\renewcommand*\cftsectionfont[1]{\oldcftsf{\bfseries{}#1}}
+\let\oldcftsfpnum\cftsectionformatpnum
+\renewcommand*\cftsectionformatpnum[1]{\oldcftsfpnum{\bfseries{}#1}}
+\cftsetindents{section}{1.5em}{7em}
+\renewcommand*{\cftsectionpresnum}{\itshape}
+\renewcommand*{\cftsectionaftersnum}{.}
+\renewcommand*{\cftsectionaftersnumb}{\enspace}
 
-%---subsection
+%%---\subsection
 \setsubsecheadstyle{\normalfont\small\bfseries\centering\MakeTextUppercase}
 \newcommand\subsectionsecnumformat{\thesubsection.\ }
 \renewcommand*{\thesubsection}{\@Alph\c@subsection}
@@ -495,15 +511,15 @@
 %\renewcommand{\@seccntformat}[1]{}
 
 % Remove section numbers in ToC
-\let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
-\let\oldcftspn\cftsectionafterpnum% and of \cftsectionafterpnum
-\renewcommand*{\cftsectionfont}{%
-\let\oldnl\numberline% save definition of \numberline
-\renewcommand*{\numberline}[1]{}% change it
-\oldcftsf} % use original \cftsectionfont
-\renewcommand*{\cftsectionafterpnum}{%
-\let\numberline\oldnl% % restore orginal \numberline
-\oldcftspn} % use original \cftsectionafterpnum
+%\let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
+%\let\oldcftspn\cftsectionafterpnum% and of \cftsectionafterpnum
+%\renewcommand*{\cftsectionfont}{%
+%\let\oldnl\numberline% save definition of \numberline
+%\renewcommand*{\numberline}[1]{}% change it
+%\oldcftsf} % use original \cftsectionfont
+%\renewcommand*{\cftsectionafterpnum}{%
+%\let\numberline\oldnl% % restore orginal \numberline
+%\oldcftspn} % use original \cftsectionafterpnum
 
 \cftpagenumbersoff{book}
 \renewcommand*{\cftbookfont}{\hfil}
@@ -512,6 +528,11 @@
 % разделитель абзацев - короткая линия по центру
 \newcommand{\sectionline}{%
   {\centering \raisebox{0pt}[1.5ex][1.5ex]{\rule{0.9cm}{0.4pt}} \par}
+}
+
+\newcommand*{\rufemOrdinal}[1]{%
+\ifcase #1\or{Первая}\or{Вторая}\or{Третья}\or{Четвёртая}\or{Пятая}\or{Шестая}%
+\or{Седьмая}\or{Восьмая}\or{Девятая}\or{Десятая}\else#1\fi%
 }
 
 \endinput
