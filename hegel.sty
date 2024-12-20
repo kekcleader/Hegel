@@ -84,7 +84,7 @@
 %\setparaheadstyle{\normalfont\normalsize\bfseries}
 %\setparaindent{0pt}\setafterparaskip{0pt}
 
-%%---\section
+%%---глава-\section
 \newcommand*\sechd[1]{%
 \sethangfrom{\noindent  ##1}%
 \normalfont\large\bfseries%
@@ -97,7 +97,7 @@
 \renewcommand*\cftsectionfont[1]{\oldcftsf{\bfseries{}#1}}
 \let\oldcftsfpnum\cftsectionformatpnum
 \renewcommand*\cftsectionformatpnum[1]{\oldcftsfpnum{\bfseries{}#1}}
-\cftsetindents{section}{1.5em}{7em}
+\cftsetindents{section}{1em}{7em}
 \renewcommand*{\cftsectionpresnum}{\itshape}
 \renewcommand*{\cftsectionaftersnum}{.}
 \renewcommand*{\cftsectionaftersnumb}{\enspace}
@@ -106,7 +106,7 @@
 \setsubsecheadstyle{\normalfont\small\bfseries\centering\MakeTextUppercase}
 \newcommand\subsectionsecnumformat{\thesubsection.\ }
 \renewcommand*{\thesubsection}{\@Alph\c@subsection}
-\cftsetindents{subsection}{3.8em}{0.8em}
+\cftsetindents{subsection}{2em}{0.8em}
 \renewcommand*{\cftsubsectionaftersnum}{.}
 \renewcommand*{\cftsubsectionaftersnumb}{\enspace}
 
@@ -123,7 +123,7 @@
 \newcommand\subsubsectionsecnumformat{\thesubsubsection.\ }
 \setsubsubsecheadstyle{\normalsize\bfseries\centering}
 \renewcommand\subsubsectionsecnumformat{\thesubsubsection\enspace}%
-\cftsetindents{subsubsection}{8.0em}{0.8em}
+\cftsetindents{subsubsection}{3.8em}{0.8em}
 \renewcommand{\cftsubsubsectionaftersnum}{}%
 \renewcommand{\cftsubsubsectionaftersnumb}{\enspace}
 
@@ -168,7 +168,7 @@
 \newcommand\subsubsubsectionsecnumformat{%
     \csname thesubsubsubsection\endcsname\quad}
 \newlistentry[subsubsection]{subsubsubsection}{toc}{3}
-\cftsetindents{subsubsubsection}{10.0em}{0.8em}
+\cftsetindents{subsubsubsection}{5.6em}{0.8em}
 \newcommand*{\subsubsubsectionmark}[1]{}
 \renewcommand*{\cftsubsubsubsectionaftersnumb}{\enspace}
 
@@ -200,7 +200,7 @@
                 {\afterremskip}%         skip after the heading
                 {\normalfont\remheadstyle}} % font
 \newlistentry[subsection]{subremark}{toc}{2}
-  \cftsetindents{subremark}{8.0em}{0.8em}
+  \cftsetindents{subremark}{3.8em}{0.8em}
 \newcommand{\subremarkmark}[1]{}
 \newcommand\subremarksecnumformat{%
     {\remarksecnumformatPre\remarksecnumname\thesubremark%
@@ -260,7 +260,7 @@
 }
 \setremheadstyle{\shortcenter}
 \newlistentry[subsubsection]{subsubremark}{toc}{3}
-  \cftsetindents{subsubremark}{10.0em}{0.8em}
+  \cftsetindents{subsubremark}{5.6em}{0.8em}
 \newcommand{\subsubremarkmark}[1]{}
 \newcommand\remarksecnumformatPre{%
         \normalsize\lsstyle\mdseries\centering}
@@ -301,7 +301,7 @@
                 {\afterremskip}%         skip after the heading
                 {\normalfont\remheadstyle}} % font
 \newlistentry[subsubsubsection]{subsubsubremark}{toc}{4}
-  \cftsetindents{subsubsubremark}{11.0em}{0.8em}
+  \cftsetindents{subsubsubremark}{7.4em}{0.8em}
 \newcommand{\subsubsubremarkmark}[1]{}
 \newcommand\subsubsubremarksecnumformat{%
     {\remarksecnumformatPre\remarksecnumname\thesubsubsubremark%
