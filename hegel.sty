@@ -57,9 +57,14 @@
 %%% PAGE LAYOUT
 %%%------------------------------------------------------------------------
 
-\setlrmarginsandblock{0.11\paperwidth}{*}{1} % Left and right margin
-\setulmarginsandblock{0.14\paperwidth}{*}{1} % Upper and lower margin
+\settypeoutlayoutunit{mm}
+\setlrmarginsandblock{12mm}{*}{1}
+\setulmarginsandblock{12mm}{*}{1} 
+
+\setheadfoot{11mm}{7mm}
+\setheaderspaces{*}{1mm}{*}
 \checkandfixthelayout
+
 
 \clubpenalty=10000
 \widowpenalty=10000
@@ -354,39 +359,7 @@
 %%% HEADER AND FOOTER
 %%%------------------------------------------------------------------------
 
-\makepagestyle{standard} % Make standard pagestyle
 
-% Define standard pagestyle
-\makeevenfoot{standard}{}{}{}
-\makeoddfoot{standard}{}{}{}
-\makeevenhead{standard}{\bfseries\thepage\normalfont\qquad\small\leftmark}{}{}
-\makeoddhead{standard}{}{}{\small\rightmark\qquad\bfseries\thepage}
-% \makeheadrule{standard}{\textwidth}{\normalrulethickness}
-
-\makepsmarks{standard}{
-\createmark{chapter}{both}{nonumber}{\@chapapp\ }{ \quad }
-\createmark{chapter}{right}{nonumber}{}{ \quad }
-\createmark{section}{right}{nonumber}{}{ \quad }
-\createmark{subsection}{right}{nonumber}{}{ \quad }
-\createplainmark{toc}{both}{\contentsname}
-\createplainmark{lof}{both}{\listfigurename}
-\createplainmark{lot}{both}{\listtablename}
-\createplainmark{bib}{both}{\bibname}
-\createplainmark{index}{both}{\indexname}
-\createplainmark{glossary}{both}{\glossaryname}
-}
-
-\makepagestyle{chap} % Make new chapter pagestyle
-
-\makeevenfoot{chap}{}{}{} % Define new chapter pagestyle
-\makeoddfoot{chap}{}{}{}
-\makeevenhead{chap}{}{}{}
-\makeoddhead{chap}{}{}{}
-% \makeheadrule{chap}{\textwidth}{\normalrulethickness}
-
-\nouppercaseheads
-\pagestyle{standard}   % Choosing pagestyle and chapter pagestyle
-\aliaspagestyle{chapter}{chap}
 
 %%% END NOTES
 %%%------------------------------------------------------------------------

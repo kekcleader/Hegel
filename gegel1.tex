@@ -31,16 +31,17 @@
   \textit{М.~Б.~МИТИНА}
 \par}
 
-\clearpage
+%\clearpage
+%\clearforchapter
+\cleardoublepage
 
-\pagestyle{plain}
+\pagestyle{simple}
 \pagenumbering{Roman}
 \setcounter{page}{1}
 \renewcommand{\parttitlefont}{\large}
 \input{001_o_znachenii.tex}
 
 \cleardoublepage
-\pagestyle{empty}
 
 {\centering
   \ \\
@@ -57,7 +58,7 @@
   \vspace{1mm}}
 
 \newgeometry{left=15mm,right=15mm,top=25mm,bottom=5mm}
-
+\thispagestyle{empty}
 \begin{center}
 \includegraphics[width=11.4cm]{hegel-img001.png}
 \end{center}
@@ -66,23 +67,18 @@
 
 \mainmatter
 
-\pagestyle{plain}
-
-\setsecnumdepth{part}
+\setsecnumdepth{none}
 \chapter[Предисловие к первому изданию]{\large ПРЕДИСЛОВИЕ К ПЕРВОМУ ИЗДАНИЮ}
-\thispagestyle{empty}
 \input{002_predislovie.tex}
 
 \clearpage
 
 \chapter[Предисловие ко второму изданию]{\large ПРЕДИСЛОВИЕ КО ВТОРОМУ ИЗДАНИЮ}
-\thispagestyle{empty}
 \input{003_predislovie.tex}
 
 \clearpage
 
 \chapter[Введение]{ВВЕДЕНИЕ}
-\thispagestyle{empty}
 \input{004_vvedenie.tex}
 
 \addtocontents{toc}{\vspace{7mm}%
@@ -94,11 +90,8 @@
       \LARGE\bfseries УЧЕНИЕ О БЫТИИ}
 \addtocspace{2mm}
 
-\thispagestyle{empty}
-\cleardoublepage
 \setsecnumdepth{subsection}
 \subsubsection{С~чего следует начинать науку}
-\pagestyle{plain}
 \input{101_s_chego.tex}
 
 \setsecnumdepth{subsubsection}
@@ -143,8 +136,6 @@
 \part*{ПРИЛОЖЕНИЯ}
 % Предисловие издателя (Леопольда фон Геннинга)
 \input{141_prilozhenija.tex}
-
-\clearpage
 
 \chapter[\mdseries Примечания]{ПРИМЕЧАНИЯ}
 \input{142_primechanija.tex}
