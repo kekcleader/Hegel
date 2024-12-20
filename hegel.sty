@@ -66,54 +66,17 @@
 \maxsecnumdepth{subparagraph}
 \setsecnumdepth{subsubsection}
 
-\makechapterstyle{standard}{
-  \setlength{\beforechapskip}{0.8\baselineskip}
-  \setlength{\midchapskip}{0\baselineskip}
-  \setlength{\afterchapskip}{0.5\baselineskip}
-  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
-  \renewcommand{\chapnamefont}{\centering\normalfont\Large}
-  \renewcommand{\printchaptername}{\chapnamefont \@chapapp}
-  \renewcommand{\chapternamenum}{\space}
-  \renewcommand{\chapnumfont}{\normalfont\Large}
-  \renewcommand{\printchapternum}{\chapnumfont \thechapter}
-  \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
-  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
-  \renewcommand{\chaptitlefont}{\centering\bfseries\normalsize}
-  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
-  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
-
-  % Part titles
-  \renewcommand{\beforepartskip}{}
-  \renewcommand{\afterpartskip}{\bigskip}
-
-  \renewcommand{\clearforchapter}{}
-}
-
-% FIXME: временный стиль для 2 и 3 книги
-\makechapterstyle{standardtwo}{
-  \setlength{\beforechapskip}{0\baselineskip}
-  \setlength{\midchapskip}{1\baselineskip}
-  \setlength{\afterchapskip}{2\baselineskip}
-  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
-  \renewcommand{\chapnamefont}{\centering\normalfont\Large}
-  \renewcommand{\printchaptername}{\chapnamefont \@chapapp}
-  \renewcommand{\chapternamenum}{\space}
-  \renewcommand{\chapnumfont}{\normalfont\Large}
-  \renewcommand{\printchapternum}{\chapnumfont \thechapter}
-  \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
-  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
-  \renewcommand{\chaptitlefont}{\centering\bfseries\normalsize}
-  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
-  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
-
-  % Part titles
-  \renewcommand{\beforepartskip}{}
-  \renewcommand{\afterpartskip}{\bigskip}
-
-  \renewcommand{\clearforchapter}{}
-}
-
-\chapterstyle{standard}
+%%---отдел-\chapter
+\chapterstyle{bianchi}
+%\chapterstyle{thatcher}
+\renewcommand*{\thechapter}{\rumaleOrdinal{\value{chapter}} отдел}
+\renewcommand*{\chapnamefont}{\normalfont\Large\sffamily\itshape\centering}
+\renewcommand*\printchaptername{\chapnamefont\MakeTextUppercase{\rumaleOrdinal{\value{chapter}}}}
+\renewcommand*\printchapternum{\MakeTextUppercase{отдел}}
+\cftsetindents{chapter}{0em}{7.5em}
+\renewcommand*{\cftchapterpresnum}{\itshape\centering}
+\renewcommand*{\cftchapteraftersnum}{.}
+\renewcommand*{\cftchapteraftersnumb}{\enspace}
 
 \newcommand{\addtocspace}[1]{%
   \addtocontents{toc}{\vspace{#1}}}
@@ -493,20 +456,6 @@
 \renewcommand{\printpartname}{}
 \renewcommand{\thepart}{}
 
-\renewcommand{\printchaptername}{}
-\renewcommand{\thechapter}{}
-
-
-% Remove section numbers in ToC
-%\let\oldcftsf\cftsectionfont% save definition of \cftsectionfont
-%\let\oldcftspn\cftsectionafterpnum% and of \cftsectionafterpnum
-%\renewcommand*{\cftsectionfont}{%
-%\let\oldnl\numberline% save definition of \numberline
-%\renewcommand*{\numberline}[1]{}% change it
-%\oldcftsf} % use original \cftsectionfont
-%\renewcommand*{\cftsectionafterpnum}{%
-%\let\numberline\oldnl% % restore orginal \numberline
-%\oldcftspn} % use original \cftsectionafterpnum
 
 \cftpagenumbersoff{book}
 \renewcommand*{\cftbookfont}{\hfil}
@@ -527,6 +476,10 @@
 \newcommand*{\rufemOrdinal}[1]{%
 \ifcase #1\or{Первая}\or{Вторая}\or{Третья}\or{Четвёртая}\or{Пятая}\or{Шестая}%
 \or{Седьмая}\or{Восьмая}\or{Девятая}\or{Десятая}\else#1\fi%
+}
+\newcommand*{\rumaleOrdinal}[1]{%
+\ifcase #1\or{Первый}\or{Второй}\or{Третий}\or{Четвёртый}\or{Пятый}\or{Шестой}%
+\or{Седьмой}\or{Восьмой}\or{Девятый}\or{Десятый}\else#1\fi%
 }
 
 \endinput
