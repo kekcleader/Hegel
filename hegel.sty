@@ -26,18 +26,23 @@
 \RequirePackage{graphicx} % Include figures
 
 \newcommand*\printfadding{%
-\UPFadingImage*[height=12mm,trim={0 38mm 0 0},clip]{top.png}%
-\LOWFadingImage*[height=12mm,trim={0 38mm 0 0},clip]{bottom.png}}
+\UPFadingImage*[height=20mm,trim={0 38mm 0 0},clip]{top.png}%
+\LOWFadingImage*[height=20mm,trim={0 38mm 0 0},clip]{bottom.png}}
 
 \makepsmarks{ruled}{%
-\createmark{chapter}{left}{nonumber}{\@chapapp\ }{. \ }
-\createmark{section}{right}{nonumber}{}{. \ }
+\clearmark{part}
+\clearmark{chapter}
+\clearmark{section}
+\createmark{part}{left}{nonumber}{}{. \ }
+\createmark{chapter}{right}{nonumber}{\@chapapp\ }{. \ }
 }
-
-\makeoddhead{ruled}{\printfadding}{\rightmark}{\thepage}
-\makeevenhead{ruled}{\thepage}{\leftmark}{\printfadding}
-\makeoddfoot{ruled}{}{}{}
-\makeevenfoot{ruled}{}{}{}
+\addtopsmarks{ruled}{}{%
+%\createmark{subsubsection}{right}{nonumber}{}{. \ }
+}
+\makeoddhead{ruled}{\printfadding}{\rightmark}{}
+\makeevenhead{ruled}{}{\leftmark}{\printfadding}
+\makeoddfoot{ruled}{}{\thepage}{}
+\makeevenfoot{ruled}{}{\thepage}{}
 
 \makeoddfoot{simple}{}{\printfadding}{}
 \makeevenfoot{simple}{}{\printfadding}{}
@@ -79,8 +84,8 @@
 %%%------------------------------------------------------------------------
 
 \settypeoutlayoutunit{mm}
-\setlrmarginsandblock{12mm}{*}{1}
-\setulmarginsandblock{12mm}{*}{1} 
+\setlrmarginsandblock{15mm}{20mm}{*}
+\setulmarginsandblock{20mm}{*}{1} 
 
 \setheadfoot{11mm}{7mm}
 \setheaderspaces{*}{1mm}{*}
@@ -443,6 +448,7 @@
 
 \renewcommand{\cftchapterdotsep}{\cftdotsep} % Chapter dots in ToC
 \renewcommand{\cftpartdotsep}{\cftdotsep}
+\setlength{\cftpartindent}{42mm}
 
 \cftpagenumbersoff{book}
 \renewcommand*{\cftbookfont}{\hfil}
