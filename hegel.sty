@@ -28,6 +28,17 @@
 \newcommand*\printfadding{%
 \UPFadingImage*[height=12mm,trim={0 38mm 0 0},clip]{top.png}%
 \LOWFadingImage*[height=12mm,trim={0 38mm 0 0},clip]{bottom.png}}
+
+\makepsmarks{ruled}{%
+\createmark{chapter}{left}{nonumber}{\@chapapp\ }{. \ }
+\createmark{section}{right}{nonumber}{}{. \ }
+}
+
+\makeoddhead{ruled}{\printfadding}{\rightmark}{\thepage}
+\makeevenhead{ruled}{\thepage}{\leftmark}{\printfadding}
+\makeoddfoot{ruled}{}{}{}
+\makeevenfoot{ruled}{}{}{}
+
 \makeoddfoot{simple}{}{\printfadding}{}
 \makeevenfoot{simple}{}{\printfadding}{}
 \makeoddhead{plain}{}{\printfadding}{}
