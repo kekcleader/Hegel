@@ -21,9 +21,19 @@
 
 \RequirePackage{amsmath,amssymb,mathtools} % Math
 
-% \RequirePackage{tikz} % Figures
+\RequirePackage{tikz} % Figures
+\RequirePackage{fadingimage}
 \RequirePackage{graphicx} % Include figures
 
+\newcommand*\printfadding{%
+\UPFadingImage*[height=12mm,trim={0 38mm 0 0},clip]{top.png}%
+\LOWFadingImage*[height=12mm,trim={0 38mm 0 0},clip]{bottom.png}}
+\makeoddfoot{simple}{}{\printfadding}{}
+\makeevenfoot{simple}{}{\printfadding}{}
+\makeoddhead{plain}{}{\printfadding}{}
+\makeevenhead{plain}{}{\printfadding}{}
+\makeoddfoot{empty}{}{\printfadding}{}
+\makeevenfoot{empty}{}{\printfadding}{}
 % Отметка о версии черновика на каждой странице
 % Чтобы работало надо в своей локальной копии по инструкции
 % https://www.ctan.org/pkg/gitinfo2 создать небходимые файлы в папке
@@ -49,7 +59,7 @@
 % executable.
 %\ifnumequal{\value{draft}}{1}{% Черновик
    \IfFileExists{.git/gitHeadInfo.gin}{
-      \RequirePackage[mark,pcount]{gitinfo2}
+      \RequirePackage[mark,pcount,raisemark=1mm]{gitinfo2}
       \renewcommand{\gitMark}{rev.\gitAbbrevHash\ \gitDirty\quad{}branch: \gitBranch\quad{}tags: \gitTags\\\gitCommitterIsoDate}
    }{}
 %}{}
