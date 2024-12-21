@@ -26,8 +26,8 @@
 \RequirePackage{graphicx} % Include figures
 
 \newcommand*\printfadding{%
-\UPFadingImage*[height=20mm,trim={0 38mm 0 0},clip]{top.png}%
-\LOWFadingImage*[height=20mm,trim={0 38mm 0 0},clip]{bottom.png}}
+\UPFadingImage*[height=19mm,trim={0 31mm 0 0},clip]{top.png}!%
+\LOWFadingImage*[height=19mm,trim={0 0 0 31mm},clip]{bottom.png}!}
 
 \makepsmarks{ruled}{%
 \clearmark{part}
@@ -40,7 +40,7 @@
 %\createmark{subsubsection}{right}{nonumber}{}{. \ }
 }
 \makeoddhead{ruled}{\printfadding}{\rightmark}{}
-\makeevenhead{ruled}{}{\leftmark}{\printfadding}
+\makeevenhead{ruled}{\printfadding}{\leftmark}{}
 \makeoddfoot{ruled}{}{\thepage}{}
 \makeevenfoot{ruled}{}{\thepage}{}
 
