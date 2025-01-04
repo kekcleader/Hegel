@@ -26,26 +26,26 @@
 \RequirePackage{graphicx} % Include figures
 
 \newcommand*\printfadding{%
-\UPFadingImage*[height=19mm,trim={0 31mm 0 0},clip]{top.png}!%
-\LOWFadingImage*[height=19mm,trim={0 0 0 31mm},clip]{bottom.png}!}
+\UPFadingImage*[height=18mm,trim={0 32mm 0 0},clip]{top.png}!%
+\LOWFadingImage*[height=18mm,trim={0 0 0 32mm},clip]{bottom.png}!}
 
-\makepsmarks{ruled}{%
+\renewcommand\framepichook{\color{red}}
+
+\makepsmarks{simple}{%
 \clearmark{part}
 \clearmark{chapter}
 \clearmark{section}
 \createmark{part}{left}{nonumber}{}{. \ }
 \createmark{chapter}{right}{nonumber}{\@chapapp\ }{. \ }
 }
-\addtopsmarks{ruled}{}{%
+\addtopsmarks{simple}{}{%
 %\createmark{subsubsection}{right}{nonumber}{}{. \ }
 }
-\makeoddhead{ruled}{\printfadding}{\rightmark}{}
-\makeevenhead{ruled}{\printfadding}{\leftmark}{}
-\makeoddfoot{ruled}{}{\thepage}{}
-\makeevenfoot{ruled}{}{\thepage}{}
+\makeoddhead{simple}{\printfadding}{\rightmark}{}
+\makeevenhead{simple}{\printfadding}{\leftmark}{}
+\makeoddfoot{simple}{}{\thepage}{}
+\makeevenfoot{simple}{}{\thepage}{}
 
-\makeoddfoot{simple}{}{\printfadding}{}
-\makeevenfoot{simple}{}{\printfadding}{}
 \makeoddhead{plain}{}{\printfadding}{}
 \makeevenhead{plain}{}{\printfadding}{}
 \makeoddfoot{empty}{}{\printfadding}{}
@@ -85,9 +85,9 @@
 
 \settypeoutlayoutunit{mm}
 \setlrmarginsandblock{15mm}{20mm}{*}
-\setulmarginsandblock{20mm}{*}{1} 
+\setulmarginsandblock{19mm}{20mm}{*}
 
-\setheadfoot{11mm}{7mm}
+\setheadfoot{11mm}{8mm}
 \setheaderspaces{*}{1mm}{*}
 \checkandfixthelayout
 
