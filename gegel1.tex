@@ -13,9 +13,9 @@
 \begin{document}
 
 \frontmatter
-\pagestyle{empty}
+\thispagestyle{plainfullpagecover}
 
-{\centering
+{\centering\color{white}
   {\Large Г.~В.~Ф.~ГЕГЕЛЬ} \\
   \vspace{130pt}
   \textbf{\Huge НАУКА ЛОГИКИ} \\
@@ -38,14 +38,14 @@
 \pagestyle{simple}
 \pagenumbering{Roman}
 \setcounter{page}{1}
-\renewcommand{\parttitlefont}{\large}
+\renewcommand{\parttitlefont}{\Huge\color{white}}
 \input{001_o_znachenii.tex}
 
 \cleardoublepage
 
 \mainmatter
-\thispagestyle{empty}
-{\centering
+\thispagestyle{plainfullpagecover}
+{\centering\color{white}
   \ \\
   \vspace{50mm}
   {\huge\bfseries ГЕГЕЛЬ} \\
@@ -60,7 +60,7 @@
   \vspace{1mm}}
 
 \newgeometry{left=15mm,right=15mm,top=25mm,bottom=5mm}
-\thispagestyle{empty}
+\thispagestyle{plainfullpagecover}
 \begin{center}
 \includegraphics[width=11.4cm]{hegel-img001.png}
 \end{center}
@@ -133,11 +133,13 @@
 \addtocontents{toc}{\vspace{6mm}%
   {\centering\normalsize\bfseries ПРИЛОЖЕНИЯ\\}}
 
-\chapter*{ПРИЛОЖЕНИЯ}
+\renewcommand\appendixpagename{ПРИЛОЖЕНИЯ}
+\appendixpage*
+
 % Предисловие издателя (Леопольда фон Геннинга)
 \input{141_prilozhenija.tex}
 
-\section[\mdseries Примечания]{ПРИМЕЧАНИЯ}
+\chapter[\mdseries Примечания]{ПРИМЕЧАНИЯ}
 \input{142_primechanija.tex}
 
 \clearpage

@@ -25,9 +25,19 @@
 \RequirePackage{fadingimage}
 \RequirePackage{graphicx} % Include figures
 
-\newcommand*\printfadding{%
-\UPFadingImage*[height=18mm,trim={0 32mm 0 0},clip]{top.png}!%
-\LOWFadingImage*[height=18mm,trim={0 0 0 32mm},clip]{bottom.png}!}
+\newcommand*\printfaddingright{%
+\UPFadingImage*[height=18mm, width=\paperwidth,trim={0 191mm 0 0},clip]{hegel1-cover-right.png}!%
+\LOWFadingImage*[height=18mm, width=\paperwidth,trim={0 0 0 191mmmm},clip]{hegel1-cover-right.png}!}
+\newcommand*\printfaddingleft{%
+\UPFadingImage*[height=18mm, width=\paperwidth,trim={0 191mm 0 0},clip]{hegel1-cover-left.png}!%
+\LOWFadingImage*[height=18mm, width=\paperwidth,trim={0 0 0 191mmmm},clip]{hegel1-cover-left.png}!}
+
+\newcommand\printfullpagefadingright{%
+  \UPFadingImage*[height=\paperheight, width=\paperwidth]{hegel1-cover-right.png}!%
+}
+\newcommand\printfullpagefadingleft{%
+  \UPFadingImage*[height=\paperheight, width=\paperwidth]{hegel1-cover-left.png}!
+}
 
 \renewcommand\framepichook{\color{red}}
 
@@ -41,15 +51,27 @@
 \addtopsmarks{simple}{}{%
 %\createmark{subsubsection}{right}{nonumber}{}{. \ }
 }
-\makeoddhead{simple}{\printfadding}{\rightmark}{}
-\makeevenhead{simple}{\printfadding}{\leftmark}{}
-\makeoddfoot{simple}{}{\thepage}{}
-\makeevenfoot{simple}{}{\thepage}{}
+\makeoddhead{simple}{\printfaddingright}{\color{white}\rightmark}{}
+\makeevenhead{simple}{\printfaddingleft}{\color{white}\leftmark}{}
+\makeoddfoot{simple}{}{\color{white}\thepage}{}
+\makeevenfoot{simple}{}{\color{white}\thepage}{}
 
-\makeoddhead{plain}{}{\printfadding}{}
-\makeevenhead{plain}{}{\printfadding}{}
-\makeoddfoot{empty}{}{\printfadding}{}
-\makeevenfoot{empty}{}{\printfadding}{}
+\makeoddhead{plain}{\printfaddingright}{}{}
+\makeevenhead{plain}{\printfaddingleft}{}{}
+\makeoddfoot{plain}{}{\color{white}\thepage}{}
+\makeevenfoot{plain}{}{\color{white}\thepage}{}
+
+\copypagestyle{plainfullpagecover}{plain}
+\makeoddhead{plainfullpagecover}{\printfullpagefadingright}{}{}
+\makeevenhead{plainfullpagecover}{\printfullpagefadingleft}{}{}
+\makeoddfoot{plainfullpagecover}{}{}{}
+\makeevenfoot{plainfullpagecover}{}{}{}
+\aliaspagestyle{part}{plainfullpagecover}
+
+\makeoddhead{empty}{\printfaddingright}{}{}
+\makeevenhead{empty}{\printfaddingleft}{}{}
+\makeoddfoot{empty}{}{}{}
+\makeevenfoot{empty}{}{}{}
 % Отметка о версии черновика на каждой странице
 % Чтобы работало надо в своей локальной копии по инструкции
 % https://www.ctan.org/pkg/gitinfo2 создать небходимые файлы в папке
