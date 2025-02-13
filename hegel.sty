@@ -52,13 +52,13 @@
 }
 \makeoddhead{simple}{\printfaddingright}{\color{white}\rightmark}{}
 \makeevenhead{simple}{\printfaddingleft}{\color{white}\leftmark}{}
-\makeoddfoot{simple}{}{}{\makebox[0em][l]{\thepage}}
-\makeevenfoot{simple}{\makebox[0em][r]{\thepage}}{}{}
+\makeoddfoot{simple}{}{\color{white}\thepage}{}
+\makeevenfoot{simple}{}{\color{white}\thepage}{}
 
 \makeoddhead{plain}{\printfaddingright}{}{}
 \makeevenhead{plain}{\printfaddingleft}{}{}
-\makeoddfoot{plain}{}{}{\makebox[0em][l]{\thepage}}
-\makeevenfoot{plain}{\makebox[0em][r]{\thepage}}{}{}
+\makeoddfoot{plain}{}{\color{white}\thepage}{}
+\makeevenfoot{plain}{}{\color{white}\thepage}{}
 
 \copypagestyle{plainfullpagecover}{plain}
 \makeoddhead{plainfullpagecover}{\printfullpagefadingright}{}{}
