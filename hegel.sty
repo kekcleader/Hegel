@@ -130,6 +130,8 @@
 \renewcommand*{\chapnamefont}{\normalfont\Large\sffamily\itshape\centering}
 \renewcommand*\printchaptername{\chapnamefont\MakeTextUppercase{\rumaleOrdinal{\value{chapter}}}}
 \renewcommand*\printchapternum{\MakeTextUppercase{отдел}}
+\renewcommand*\afterchaptertitle{\vskip\onelineskip\hrule\vskip
+\afterchapskip\newpage}
 \cftsetindents{chapter}{0em}{7.5em}
 \renewcommand*{\cftchapterpresnum}{\itshape\centering}
 \renewcommand*{\cftchapteraftersnum}{.}
