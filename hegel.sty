@@ -128,9 +128,11 @@
 \chapterstyle{bianchi}
 %\chapterstyle{thatcher}
 \renewcommand*{\thechapter}{\rumaleOrdinal{\value{chapter}} отдел}
-\renewcommand*{\chapnamefont}{\normalfont\Large\sffamily\itshape\centering}
+\renewcommand*{\chapnamefont}{\color{white}\normalfont\Large\sffamily\itshape\centering}
 \renewcommand*\printchaptername{\chapnamefont\MakeTextUppercase{\rumaleOrdinal{\value{chapter}}}}
 \renewcommand*\printchapternum{\MakeTextUppercase{отдел}}
+\renewcommand*{\printchaptertitle}[1]{%
+\color{white}\hrule\vskip\onelineskip \centering \chaptitlefont\textbf{#1}\par}
 \renewcommand*\afterchaptertitle{\vskip\onelineskip\hrule\vskip
 \afterchapskip\newpage}
 \cftsetindents{chapter}{0em}{7.5em}
