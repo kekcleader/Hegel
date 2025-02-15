@@ -20,17 +20,17 @@
 \RequirePackage{graphicx} % Include figures
 
 \newcommand*\printfaddingright{%
-\UPFadingImage*[height=18mm, width=\paperwidth,trim={0 191mm 0 0},clip]{hegel1-cover-right.png}!%
-\LOWFadingImage*[height=18mm, width=\paperwidth,trim={0 0 0 191mmmm},clip]{hegel1-cover-right.png}!}
+\UPFadingImage*{fig/Colontitle-up-right.png}!%
+\LOWFadingImage*{fig/Colontitle-bottom-right.png}!}
 \newcommand*\printfaddingleft{%
-\UPFadingImage*[height=18mm, width=\paperwidth,trim={0 191mm 0 0},clip]{hegel1-cover-left.png}!%
-\LOWFadingImage*[height=18mm, width=\paperwidth,trim={0 0 0 191mmmm},clip]{hegel1-cover-left.png}!}
+\UPFadingImage*{fig/Colontitle-up-left.png}!%
+\LOWFadingImage*{fig/Colontitle-bottom-left.png}!}
 
 \newcommand\printfullpagefadingright{%
-  \UPFadingImage*[height=\paperheight, width=\paperwidth]{hegel1-cover-right.png}!%
+  \UPFadingImage*[height=\paperheight, width=\paperwidth]{fig/hegel1-cover-right.png}!%
 }
 \newcommand\printfullpagefadingleft{%
-  \UPFadingImage*[height=\paperheight, width=\paperwidth]{hegel1-cover-left.png}!
+  \UPFadingImage*[height=\paperheight, width=\paperwidth]{fig/hegel1-cover-left.png}!
 }
 
 
@@ -92,7 +92,7 @@
 %\ifnumequal{\value{draft}}{1}{% Черновик
    \IfFileExists{.git/gitHeadInfo.gin}{
       \RequirePackage[mark,pcount,raisemark=1mm]{gitinfo2}
-      \renewcommand{\gitMark}{rev.\gitAbbrevHash\ \gitDirty\quad{}branch: \gitBranch\quad{}tags: \gitTags\\\gitCommitterIsoDate}
+      \renewcommand{\gitMark}{rev.\gitAbbrevHash\ \gitDirty\quad branch: \gitBranch\quad tags: \gitTags\quad\gitCommitterIsoDate}
    }{}
 %}{}
 
@@ -101,10 +101,10 @@
 
 \settypeoutlayoutunit{mm}
 \setlrmarginsandblock{15mm}{20mm}{*}
-\setulmarginsandblock{19mm + \baselineskip}{20mm + \baselineskip}{*}
+\setulmarginsandblock{20mm + \baselineskip}{22mm + \baselineskip}{*}
 
-\setheadfoot{11mm}{8mm  + \baselineskip}
-\setheaderspaces{*}{\baselineskip + 1mm}{*}
+\setheadfoot{11mm}{10.5mm  + \baselineskip}
+\setheaderspaces{*}{\baselineskip + 6mm}{*}
 \checkandfixthelayout
 
 
