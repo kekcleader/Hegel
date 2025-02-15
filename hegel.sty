@@ -127,8 +127,12 @@
   \renewcommand*\printchapternum{\MakeTextUppercase{отдел}}
   \renewcommand*{\printchaptertitle}[1]{%
     \color{white}\hrule\vskip\onelineskip \centering \chaptitlefont\textbf{##1}\par}
+  % Выравниваем по центру страницы
+  \beforechapskip=\fill
+  \afterchapskip=\midchapskip
+  \renewcommand*\chapterheadstart{\vspace*{\beforechapskip}}
   \renewcommand*\afterchaptertitle{\vskip\onelineskip\hrule\vskip%
-    \afterchapskip\newpage}%
+    \afterchapskip\vspace*{1.5\baselineskip}\vfill\newpage}%
 }
 \chapterstyle{hegel}
 \cftsetindents{chapter}{0em}{7.5em}
