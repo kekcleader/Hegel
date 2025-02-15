@@ -38,21 +38,21 @@
 \clearmark{part}
 \clearmark{chapter}
 \clearmark{section}
-\createmark{part}{left}{nonumber}{}{. \ }
-\createmark{chapter}{right}{nonumber}{\@chapapp\ }{. \ }
+%\createmark{part}{right}{nonumber}{}{. \ }
+\createmark{chapter}{left}{nonumber}{\@chapapp\ }{. \ }
 }
-\addtopsmarks{simple}{}{%
-%\createmark{subsubsection}{right}{nonumber}{}{. \ }
-}
-\makeoddhead{simple}{\printfaddingright}{\color{white}\rightmark}{}
-\makeevenhead{simple}{\printfaddingleft}{\color{white}\leftmark}{}
-\makeoddfoot{simple}{}{\color{white}\thepage}{}
-\makeevenfoot{simple}{}{\color{white}\thepage}{}
+
+\makeoddhead{simple}{\printfaddingright}{\color[HTML]{659fa3}\sffamily\rightmark}{}
+\makeevenhead{simple}{\printfaddingleft}{\color[HTML]{659fa3}\sffamily\leftmark}{}
+\makeoddfoot{simple}{}{}{\color[HTML]{60657b}\sffamily\thepage\enspace}
+\makeevenfoot{simple}{\color[HTML]{60657b}\sffamily\enspace\thepage}{}{}
+\makerunningwidth{simple}[92mm]{92mm}
 
 \makeoddhead{plain}{\printfaddingright}{}{}
 \makeevenhead{plain}{\printfaddingleft}{}{}
-\makeoddfoot{plain}{}{\color{white}\thepage}{}
-\makeevenfoot{plain}{}{\color{white}\thepage}{}
+\makeoddfoot{plain}{}{\color[HTML]{60657b}\sffamily\thepage}{}
+\makeevenfoot{plain}{}{\color[HTML]{60657b}\sffamily\thepage}{}
+\makerunningwidth{plain}[92mm]{92mm}
 
 \copypagestyle{plainfullpagecover}{plain}
 \makeoddhead{plainfullpagecover}{\printfullpagefadingright}{}{}
