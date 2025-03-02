@@ -20,11 +20,11 @@
 \RequirePackage{graphicx} % Include figures
 
 \newcommand*\printfaddingright{%
-\UPFadingImage*{fig/Colontitle-up-right.png}!%
-\LOWFadingImage*{fig/Colontitle-bottom-right.png}!}
+\UPFadingImage*[trim=0 0 0 -10.25mm]{fig/Colontitle-up-right.png}!%
+\LOWFadingImage*[trim=0 -10.25mm 0 0]{fig/Colontitle-bottom-right.png}!}
 \newcommand*\printfaddingleft{%
-\UPFadingImage*{fig/Colontitle-up-left.png}!%
-\LOWFadingImage*{fig/Colontitle-bottom-left.png}!}
+\UPFadingImage*[trim=0 0 0 -10.25mm]{fig/Colontitle-up-left.png}!%
+\LOWFadingImage*[trim=0 -10.25mm 0 0]{fig/Colontitle-bottom-left.png}!}
 
 \newcommand\printfullpagefadingright{%
   \UPFadingImage*[height=\paperheight, width=\paperwidth]{fig/hegel1-cover-right.png}!%
@@ -42,16 +42,16 @@
 \createmark{chapter}{right}{nonumber}{\@chapapp\ }{. \ }
 }
 
-\makeoddhead{simple}{\printfaddingright}{\color[HTML]{659fa3}\sffamily\rightmark}{}
-\makeevenhead{simple}{\printfaddingleft}{\color[HTML]{659fa3}\sffamily\leftmark}{}
-\makeoddfoot{simple}{}{}{\color[HTML]{60657b}\sffamily\thepage\enspace}
-\makeevenfoot{simple}{\color[HTML]{60657b}\sffamily\enspace\thepage}{}{}
+\makeoddhead{simple}{\printfaddingright}{\color[HTML]{659fa3}\sffamily\small\rightmark}{}
+\makeevenhead{simple}{\printfaddingleft}{\color[HTML]{659fa3}\sffamily\small\leftmark}{}
+\makeoddfoot{simple}{}{}{\color[HTML]{60657b}\sffamily\large\thepage\enspace}
+\makeevenfoot{simple}{\color[HTML]{60657b}\sffamily\large\enspace\thepage}{}{}
 \makerunningwidth{simple}[92mm]{92mm}
 
 \makeoddhead{plain}{\printfaddingright}{}{}
 \makeevenhead{plain}{\printfaddingleft}{}{}
-\makeoddfoot{plain}{}{\color[HTML]{60657b}\sffamily\thepage}{}
-\makeevenfoot{plain}{}{\color[HTML]{60657b}\sffamily\thepage}{}
+\makeoddfoot{plain}{}{\color[HTML]{60657b}\sffamily\large\thepage}{}
+\makeevenfoot{plain}{}{\color[HTML]{60657b}\sffamily\large\thepage}{}
 \makerunningwidth{plain}[92mm]{92mm}
 
 \copypagestyle{plainfullpagecover}{plain}
@@ -100,11 +100,11 @@
 %%%------------------------------------------------------------------------
 
 \settypeoutlayoutunit{mm}
-\setlrmarginsandblock{15mm}{20mm}{*}
-\setulmarginsandblock{18.5mm + \baselineskip}{22mm + \baselineskip}{*}
+\setlrmarginsandblock{23mm}{28mm}{*}
+\setulmarginsandblock{20.5 mm + \baselineskip}{22mm + \baselineskip}{*}
 
-\setheadfoot{11mm}{12mm  + \baselineskip}
-\setheaderspaces{*}{\baselineskip + 4.5mm}{*}
+\setheadfoot{11mm}{11mm  + \baselineskip}
+\setheaderspaces{*}{\baselineskip + 5mm}{*}
 \checkandfixthelayout
 
 
