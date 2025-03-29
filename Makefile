@@ -47,7 +47,7 @@ clean:
 	rm *.aux *.toc *.ent *.log *.fdb_latexmk *.fls *.gz
 
 cleand:
-	rm $(drafts_dir)/*.aux $(drafts_dir)/*.toc $(drafts_dir)/*.ent $(drafts_dir)/*.log $(drafts_dir)/*.idx $(drafts_dir)/*-dirty.pdf
+	rm $(drafts_dir)/*.aux $(drafts_dir)/*.toc $(drafts_dir)/*.ent $(drafts_dir)/*.log $(drafts_dir)/*.idx $(drafts_dir)/*-dirty.pdf $(drafts_dir)/*.ent $(drafts_dir)/*.fdb_latexmk $(drafts_dir)/*.fls
 
 cleanall: clean
 	rm *.pdf
