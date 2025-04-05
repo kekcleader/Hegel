@@ -413,19 +413,15 @@
 
 \let\oldpagenote\pagenote%
   \renewcommand{\pagenote}[1]{%
-  {\fontsize{8}{8}\selectfont%
-  \:\oldpagenote{#1}}}
+  {\,\oldpagenote{#1}}}
 
-\let\oldfootnote\footnote%
-  \renewcommand{\footnote}[1]{%
-  \,\oldfootnote{~#1}}
+\RequirePackage[perpage, symbol*]{footmisc}
+\setfnsymbol{wiley}
 
 \renewcommand{\noteidinnotes}[2]{%
   \hspace{9mm}\textsuperscript{#1}\hspace{1.5mm}}
 \renewcommand{\pageinnotes}[1]{%
   К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
-
-\renewcommand*{\thefootnote}{\ding{93}}
 
 \renewcommand*{\footnoterule}{%
   \kern-3pt%
