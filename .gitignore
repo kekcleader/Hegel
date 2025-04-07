@@ -5,3 +5,6 @@
 *.idx
 *.ent
 *.tex.swp
+*.fls
+*.fdb_latexmk
+*.synctex.gz

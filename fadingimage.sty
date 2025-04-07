@@ -1,0 +1,60 @@
+%% ***********************************************************
+%%   Copyright 2024 by Mingyu Hsia <xiamyphys@hdu.edu.cn>    *
+%%                                                           *
+%%   This work may be distributed and/or modified under      *
+%%   the conditions of the LaTeX Project Public License      *
+%%                                                           *
+%%       http://www.latex-project.org/lppl.txt               *
+%%                                                           *
+%%   either version 1.3c of this license or any later        *
+%%   version.                                                *
+%%                                                           *
+%%   This work has the LPPL maintenance status `maintained'. *
+%%                                                           *
+%%   The Current Maintainer of this work is Mingyu Hsia.     *
+%%                                                           *
+%%   This work consists of the files fadingimage.sty,        *
+%%                               and README.md.              *
+%%   available at https://github.com/xiamyphys/fadingimage   *
+%% ***********************************************************
+% !Mode:: "TeX:UTF-8"
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{fadingimage}[2024/05/06/ v0.3a Package provides macros for inputting full width picture at the edges of pages quickly.]
+
+\RequirePackage{tikz}\usetikzlibrary{fadings}
+\NewDocumentCommand{\UPFadingImage}{ s O{} m t! }{
+    \IfBooleanTF{#4}{
+        \tikz[remember picture,overlay]
+            \node[below,inner sep=0pt,outer sep=auto] at (current page.north) {\includegraphics[width=\paperwidth,#2]{#3}};
+    }{
+        \tikz[remember picture,overlay]
+            \node[scope fading=south,below,inner sep=0pt,outer sep=auto] at (current page.north) {\includegraphics[width=\paperwidth,#2]{#3}};
+    }\IfBooleanT{#1}{\leavevmode}
+}
+\NewDocumentCommand{\LOWFadingImage}{ s O{} m t! }{
+    \IfBooleanTF{#4}{
+        \tikz[remember picture,overlay]
+            \node[above,inner sep=0pt,outer sep=auto] at (current page.south) {\includegraphics[width=\paperwidth,#2]{#3}};
+    }{
+        \tikz[remember picture,overlay]
+            \node[scope fading=north,above,inner sep=0pt,outer sep=auto] at (current page.south) {\includegraphics[width=\paperwidth,#2]{#3}};
+    }\IfBooleanT{#1}{\leavevmode}
+}
+\NewDocumentCommand{\LTFadingImage}{ s O{} m t! }{
+    \IfBooleanTF{#4}{
+        \tikz[remember picture,overlay]
+            \node[right,inner sep=0pt,outer sep=auto] at (current page.west) {\includegraphics[height=\paperheight,#2]{#3}};
+    }{
+        \tikz[remember picture,overlay]
+            \node[scope fading=east,right,inner sep=0pt,outer sep=auto] at (current page.west) {\includegraphics[height=\paperheight,#2]{#3}};
+    }\IfBooleanT{#1}{\leavevmode}
+}
+\NewDocumentCommand{\RITFadingImage}{ s O{} m t! }{
+    \IfBooleanTF{#4}{
+        \tikz[remember picture,overlay]
+            \node[left,inner sep=0pt,outer sep=auto] at (current page.east) {\includegraphics[height=\paperheight,#2]{#3}};
+    }{
+        \tikz[remember picture,overlay]
+            \node[scope fading=west,left,inner sep=0pt,outer sep=auto] at (current page.east) {\includegraphics[height=\paperheight,#2]{#3}};
+    }\IfBooleanT{#1}{\leavevmode}
+}

@@ -1,0 +1,497 @@
+\ProvidesPackage{hegel}
+
+%%% PACKAGES
+%%%------------------------------------------------------------------------
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage{paratype} %нет греческих
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[greek,english,main=russian]{babel}
+\RequirePackage[final,letterspace=150]{microtype} % Less badboxes
+\RequirePackage{bookmark}
+\RequirePackage{footnotehyper}
+\RequirePackage{multicol}
+\RequirePackage{geometry}
+\RequirePackage{pifont}
+
+\RequirePackage{amsmath,amssymb,mathtools} % Math
+
+\RequirePackage{tikz} % Figures
+\RequirePackage{fadingimage}
+\RequirePackage{graphicx} % Include figures
+
+\newcommand*\printfaddingright{%
+\UPFadingImage*[trim=0 0 0 -10.25mm]{fig/Colontitle-up-right.png}!%
+\LOWFadingImage*[trim=0 -10.25mm 0 0]{fig/Colontitle-bottom-right.png}!}
+\newcommand*\printfaddingleft{%
+\UPFadingImage*[trim=0 0 0 -10.25mm]{fig/Colontitle-up-left.png}!%
+\LOWFadingImage*[trim=0 -10.25mm 0 0]{fig/Colontitle-bottom-left.png}!}
+
+\newcommand\printfullpagefadingright{%
+  \UPFadingImage*[height=\paperheight, width=\paperwidth]{fig/hegel1-cover-right.png}!%
+}
+\newcommand\printfullpagefadingleft{%
+  \UPFadingImage*[height=\paperheight, width=\paperwidth]{fig/hegel1-cover-left.png}!
+}
+
+
+\makepsmarks{simple}{%
+\clearmark{part}
+\clearmark{chapter}
+\clearmark{section}
+%\createmark{part}{right}{nonumber}{}{. \ }
+\createmark{chapter}{right}{nonumber}{\@chapapp\ }{. \ }
+}
+
+\makeoddhead{simple}{\printfaddingright}{\color[HTML]{659fa3}\sffamily\small\rightmark}{}
+\makeevenhead{simple}{\printfaddingleft}{\color[HTML]{659fa3}\sffamily\small\leftmark}{}
+\makeoddfoot{simple}{}{}{\color[HTML]{60657b}\sffamily\large\thepage\hspace{4.5mm}}
+\makeevenfoot{simple}{\color[HTML]{60657b}\sffamily\large\hspace{4.5mm}\thepage}{}{}
+
+\makeoddhead{plain}{\printfaddingright}{}{}
+\makeevenhead{plain}{\printfaddingleft}{}{}
+\makeoddfoot{plain}{}{\color[HTML]{60657b}\sffamily\large\thepage}{}
+\makeevenfoot{plain}{}{\color[HTML]{60657b}\sffamily\large\thepage}{}
+
+\copypagestyle{plainfullpagecover}{plain}
+\makeoddhead{plainfullpagecover}{\printfullpagefadingright}{}{}
+\makeevenhead{plainfullpagecover}{\printfullpagefadingleft}{}{}
+\makeoddfoot{plainfullpagecover}{}{}{}
+\makeevenfoot{plainfullpagecover}{}{}{}
+\aliaspagestyle{chapter}{plainfullpagecover}
+\aliaspagestyle{part}{plainfullpagecover}
+
+\makeoddhead{empty}{\printfaddingright}{}{}
+\makeevenhead{empty}{\printfaddingleft}{}{}
+\makeoddfoot{empty}{}{}{}
+\makeevenfoot{empty}{}{}{}
+% Отметка о версии черновика на каждой странице
+% Чтобы работало надо в своей локальной копии по инструкции
+% https://www.ctan.org/pkg/gitinfo2 создать небходимые файлы в папке
+% ./git/hooks
+% If you’re familiar with tweaking git, you can probably work it out for
+% yourself. If not, I suggest you follow these steps:
+% 1. First, you need a git repository and working tree. For this example,
+% let’s suppose that the root of the working tree is in ~/compsci
+% 2. Copy the file post-xxx-sample.txt (which is in the same folder of
+% your TEX distribution as this pdf) into the git hooks directory in your
+% working copy. In our example case, you should end up with a file called
+% ~/compsci/.git/hooks/post-checkout
+% 3. If you’re using a unix-like system, don’t forget to make the file executable.
+% Just how you do this is outside the scope of this manual, but one
+% possible way is with commands such as this:
+% chmod g+x post-checkout.
+% 4. Test your setup with “git checkout master” (or another suitable branch
+% name). This should generate copies of gitHeadInfo.gin in the directories
+% you intended.
+% 5. Now make two more copies of this file in the same directory (hooks),
+% calling them post-commit and post-merge, and you’re done. As before,
+% users of unix-like systems should ensure these files are marked as
+% executable.
+%\ifnumequal{\value{draft}}{1}{% Черновик
+   \IfFileExists{.git/gitHeadInfo.gin}{
+      \RequirePackage[mark,pcount,raisemark=1mm]{gitinfo2}
+      \renewcommand{\gitMark}{rev.\gitAbbrevHash\ \gitDirty\quad branch: \gitBranch\quad tags: \gitTags\quad\gitCommitterIsoDate}
+   }{}
+%}{}
+
+%%% PAGE LAYOUT
+%%%------------------------------------------------------------------------
+
+\settypeoutlayoutunit{mm}
+\setlrmarginsandblock{28mm}{23mm}{*}
+\setulmarginsandblock{20.5 mm + \baselineskip}{22mm + \baselineskip}{*}
+
+\setheadfoot{11mm}{11mm  + \baselineskip}
+\setheaderspaces{*}{\baselineskip + 5mm}{*}
+\checkandfixthelayout
+
+
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
+
+%%% SECTIONAL DIVISIONS
+%%%------------------------------------------------------------------------
+
+\maxsecnumdepth{subparagraph}
+\setsecnumdepth{subsubsection}
+
+%%---отдел-\chapter
+\makechapterstyle{hegel}{
+  \chapterstyle{bianchi}
+  \renewcommand*{\thechapter}{\rumaleOrdinal{\value{chapter}} отдел}
+  \renewcommand*{\chapnamefont}{\color{white}\normalfont\Large\sffamily\itshape\centering}
+  \renewcommand*\printchaptername{\chapnamefont\MakeTextUppercase{\rumaleOrdinal{\value{chapter}}}}
+  \renewcommand*\printchapternum{\MakeTextUppercase{отдел}}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \color{white}\hrule\vskip\onelineskip \centering \chaptitlefont\textbf{##1}\par}
+  % Выравниваем по центру страницы
+  \beforechapskip=\fill
+  \afterchapskip=\midchapskip
+  \renewcommand*\chapterheadstart{\vspace*{\beforechapskip}}
+  \renewcommand*\afterchaptertitle{\vskip\onelineskip\hrule\vskip%
+    \afterchapskip\vspace*{1.5\baselineskip}\vfill\newpage}%
+}
+\chapterstyle{hegel}
+\cftsetindents{chapter}{0em}{7.5em}
+\renewcommand*{\cftchapterpresnum}{\itshape\centering}
+\renewcommand*{\cftchapteraftersnum}{.}
+\renewcommand*{\cftchapteraftersnumb}{\enspace}
+
+\newcommand{\addtocspace}[1]{%
+  \addtocontents{toc}{\vspace{#1}}}
+
+%%---глава-\section
+\newcommand*\sechd[1]{%
+\sethangfrom{\noindent  ##1}%
+\normalfont\large\bfseries%
+\centering\hfil\parbox{0.8\textwidth}{\centering\MakeTextUppercase{#1}}%
+}
+\setsecheadstyle{\sechd}
+\renewcommand*{\thesection}{\rufemOrdinal{\value{section}} глава}
+\newcommand\sectionsecnumformat{{\normalfont\footnotesize\itshape\thesection}\vspace{1ex}\par}
+\let\oldcftsf\cftsectionfont
+\renewcommand*\cftsectionfont[1]{\oldcftsf{\bfseries{}#1}}
+\let\oldcftsfpnum\cftsectionformatpnum
+\renewcommand*\cftsectionformatpnum[1]{\oldcftsfpnum{\bfseries{}#1}}
+\cftsetindents{section}{1em}{7em}
+\renewcommand*{\cftsectionpresnum}{\itshape}
+\renewcommand*{\cftsectionaftersnum}{.}
+\renewcommand*{\cftsectionaftersnumb}{\enspace}
+
+%%---\subsection
+\setsubsecheadstyle{\normalfont\small\bfseries\centering\MakeTextUppercase}
+\newcommand\subsectionsecnumformat{\thesubsection.\ }
+\renewcommand*{\thesubsection}{\@Alph\c@subsection}
+\cftsetindents{subsection}{2em}{0.8em}
+\renewcommand*{\cftsubsectionaftersnum}{.}
+\renewcommand*{\cftsubsectionaftersnumb}{\enspace}
+
+%%---\subsubsection
+\let\subsubsectionT\subsubsection
+
+\renewcommand\subsubsection{%
+    \renewcommand{\thesubsubsection}{\@arabic\c@subsubsection.}%
+    \subsubsectionT}%
+\newcommand\subsubsectionalph{%
+    \renewcommand{\thesubsubsection}{\@alph\c@subsubsection)}%
+    \subsubsectionT}%
+
+\newcommand\subsubsectionsecnumformat{\thesubsubsection.\ }
+\setsubsubsecheadstyle{\normalsize\bfseries\centering}
+\renewcommand\subsubsectionsecnumformat{\thesubsubsection\enspace}%
+\cftsetindents{subsubsection}{3.8em}{0.8em}
+\renewcommand{\cftsubsubsectionaftersnum}{}%
+\renewcommand{\cftsubsubsectionaftersnumb}{\enspace}
+
+%%---\subsubsubsection
+\newcounter{subsubsubsection}[subsubsection] \setcounter{subsubsubsection}{1}
+\newcommand{\subsubsubsectiongreek}{%
+    \renewcommand{\thesubsubsubsection}{%
+        \foreignlanguage{greek}{\singlegreek{\value{subsubsubsection}}})}%
+    \renewcommand\subsubsubsectionsecnumformat{%
+        \textls[0]{\upshape\thesubsubsubsection}\ }%
+    \setsubsubsubseheadstyle{\footnotesize\itshape\centering\textls[100]}%
+    \subsubsubsectionT}
+\newcommand{\subsubsubsection}{%
+    \renewcommand{\thesubsubsubsection}{\@arabic\c@subsubsubsection.}%
+    \setsubsubsubseheadstyle{\normalsize\bfseries\centering}%
+    \subsubsubsectionT}
+\newcommand{\subsubsubsectionT}{% line3830
+  \subsubsubsehook%
+  \@startsection{subsubsubsection}{4}%  level 4
+      {\subsubsubseindent}%            heading indent
+      {\beforesubsubsubseskip}%        skip before the heading
+      {\aftersubsubsubseskip}%         skip after the heading
+      {\normalfont\subsubsubseheadstyle}} % font
+\newcommand{\subsubsubsehook}{}
+\newcommand{\setsubsubsubsehook}[1]{\renewcommand{\subsubsubsehook}{#1}}
+\newlength{\subsubsubseindent}
+\newcommand{\setsubsubsubseindent}[1]{%
+            \setlength{\subsubsubseindent}{#1}}
+\setsubsubsubseindent{\z@}
+\newskip\beforesubsubsubseskip
+\newcommand{\setbeforesubsubsubseskip}[1]{%
+            \setlength{\beforesubsubsubseskip}{#1}}
+\setbeforesubsubsubseskip{-3.25ex \@plus -1ex \@minus -.2ex}
+\newskip\aftersubsubsubseskip
+\newcommand{\setaftersubsubsubseskip}[1]{%
+            \setlength{\aftersubsubsubseskip}{#1}}
+\setaftersubsubsubseskip{1.5ex \@plus .2ex}
+\newcommand{\subsubsubseheadstyle}{}
+\newcommand{\setsubsubsubseheadstyle}[1]{%
+            \renewcommand{\subsubsubseheadstyle}{#1}}
+\setsubsubsubseheadstyle{\normalsize\bfseries\memRTLraggedright}
+\newcommand\subsubsubsectionsecnumformat{%
+    \csname thesubsubsubsection\endcsname\quad}
+\newlistentry[subsubsection]{subsubsubsection}{toc}{3}
+\cftsetindents{subsubsubsection}{5.6em}{0.8em}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\renewcommand*{\cftsubsubsubsectionaftersnumb}{\enspace}
+
+
+%%---\subremark
+\newcounter{subremark}[subsection] \setcounter{subremark}{1}
+\renewcommand*{\thesubremark}{\@arabic\c@subremark}
+\newcommand{\subremark}[1]{%
+  \ifnumgreater{\value{secnumdepth}}{2}{%
+    \ifblank{#1}{% Есть нумерация нет заголовка
+      \subremarkT{}
+    }{% Есть нумерация есть заголовок
+      \subremarkT[{#1}]{[{#1}]}
+    }
+  }{
+    \ifblank{#1}{% Нет нумерации нет заголовка
+      \subremarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
+    }{% Нет нумерации есть заголовок
+      \subremarkT[Примечание. #1]{{%
+          \remarksecnumformatPre{Примечание\remarksecnumSkip}\\}{[#1]}}
+    }
+  }
+}
+\newcommand{\subremarkT}{% line3830
+  \remhook%
+  \@startsection{subremark}{3}%          level 3
+                {\remindent}%            heading indent
+                {\beforeremskip}%        skip before the heading
+                {\afterremskip}%         skip after the heading
+                {\normalfont\remheadstyle}} % font
+\newlistentry[subsection]{subremark}{toc}{2}
+  \cftsetindents{subremark}{3.8em}{0.8em}
+\newcommand{\subremarkmark}[1]{}
+\newcommand\subremarksecnumformat{%
+    {\remarksecnumformatPre\remarksecnumname\thesubremark%
+    \remarksecnumSkip\par}}
+\renewcommand*{\cftsubremarkname}{\remarksecnumname}
+\renewcommand*{\cftsubremarkaftersnum}{.}
+\renewcommand*{\cftsubremarkaftersnumb}{\enspace}
+
+
+%%---\subsubremark
+\newcounter{subsubremark}[subsubsection] \setcounter{subsubremark}{1}
+\renewcommand*{\thesubsubremark}{\@arabic\c@subsubremark}
+\newcommand{\subsubremark}[1]{%
+  \ifnumgreater{\value{secnumdepth}}{3}{%
+    \ifblank{#1}{% Есть нумерация нет заголовка
+      \subsubremarkT{}
+    }{% Есть нумерация есть заголовок
+      \subsubremarkT[{#1}]{[{#1}]}
+    }
+  }{
+    \ifblank{#1}{% Нет нумерации нет заголовка
+      \subsubremarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
+    }{% Нет нумерации есть заголовок
+      \subsubremarkT[Примечание. #1]{{%
+          \remarksecnumformatPre{Примечание\remarksecnumSkip}\\}{[#1]}}
+    }
+  }
+}
+\newcommand{\subsubremarkT}{% line3830
+  \remhook%
+  \@startsection{subsubremark}{4}%  level 4
+      {\remindent}%            heading indent
+      {\beforeremskip}%        skip before the heading
+      {\afterremskip}%         skip after the heading
+      {\normalfont\remheadstyle}} % font
+\newcommand{\remhook}{}
+\newcommand{\setremhook}[1]{\renewcommand{\remhook}{#1}}
+\newlength{\remindent}
+\newcommand{\setremindent}[1]{%
+            \setlength{\remindent}{#1}}
+\setremindent{\z@}
+\newskip\beforeremskip
+\newcommand{\setbeforeremskip}[1]{%
+            \setlength{\beforeremskip}{#1}}
+\setbeforeremskip{-3.25ex \@plus -1ex \@minus -.2ex}
+\newskip\afterremskip
+\newcommand{\setafterremskip}[1]{%
+            \setlength{\afterremskip}{#1}}
+\setafterremskip{1.5ex \@plus .2ex}
+\newcommand{\remheadstyle}{}
+\newcommand{\setremheadstyle}[1]{%
+            \renewcommand{\remheadstyle}{#1}}
+\newcommand*{\shortcenter}[1]{%
+  \sethangfrom{\noindent  ##1}%
+  \normalfont\boldmath\bfseries\footnotesize%
+  \centering\hfil\parbox{0.8\textwidth}{\centering #1}%
+}
+\setremheadstyle{\shortcenter}
+\newlistentry[subsubsection]{subsubremark}{toc}{3}
+  \cftsetindents{subsubremark}{5.6em}{0.8em}
+\newcommand{\subsubremarkmark}[1]{}
+\newcommand\remarksecnumformatPre{%
+        \normalsize\lsstyle\mdseries\centering}
+\newcommand\remarksecnumname{Примечание\ }
+\newcommand\remarksecnumSkip{\vspace{1mm}}
+\newcommand\subsubremarksecnumformat{{%
+    \remarksecnumformatPre\remarksecnumname%
+    \thesubsubremark\remarksecnumSkip\par}}
+\renewcommand{\cftsubsubremarkname}{\remarksecnumname}
+\renewcommand*{\cftsubsubremarkaftersnum}{.}
+\renewcommand*{\cftsubsubremarkaftersnumb}{\enspace}
+
+
+%%---\subsubsubremark
+\newcounter{subsubsubremark}[subsubsubsection] \setcounter{subsubsubremark}{1}
+\renewcommand*{\thesubsubsubremark}{\@arabic\c@subsubsubremark}
+\newcommand{\subsubsubremark}[1]{%
+  \ifnumgreater{\value{secnumdepth}}{4}{%
+    \ifblank{#1}{% Есть нумерация нет заголовка
+      \subsubsubremarkT{}
+    }{% Есть нумерация есть заголовок
+      \subsubsubremarkT[{#1}]{[{#1}]}
+    }
+  }{
+    \ifblank{#1}{% Нет нумерации нет заголовка
+      \subsubsubremarkT[Примечание]{{\remarksecnumformatPre{Примечание}}}
+    }{% Нет нумерации есть заголовок
+      \subsubsubremarkT[Примечание. #1]{{%
+          \remarksecnumformatPre{Примечание\remarksecnumSkip}\\}{[#1]}}
+    }
+  }
+}
+\newcommand{\subsubsubremarkT}{% line3830
+  \remhook%
+  \@startsection{subsubsubremark}{5}%  level 5
+                {\remindent}%            heading indent
+                {\beforeremskip}%        skip before the heading
+                {\afterremskip}%         skip after the heading
+                {\normalfont\remheadstyle}} % font
+\newlistentry[subsubsubsection]{subsubsubremark}{toc}{4}
+  \cftsetindents{subsubsubremark}{7.4em}{0.8em}
+\newcommand{\subsubsubremarkmark}[1]{}
+\newcommand\subsubsubremarksecnumformat{%
+    {\remarksecnumformatPre\remarksecnumname\thesubsubsubremark%
+    \remarksecnumSkip\par}}
+\renewcommand*{\cftsubsubsubremarkname}{\remarksecnumname}
+\renewcommand*{\cftsubsubsubremarkaftersnum}{.}
+\renewcommand*{\cftsubsubsubremarkaftersnumb}{\enspace}
+
+%-- Формат номера раздела по умолчанию
+\setsecnumformat{%
+  \@ifundefined{#1secnumformat}{% nope, use a default
+    \csname the#1\endcsname\quad%
+  }{%
+    \csname #1secnumformat\endcsname%
+  }%
+}
+
+
+%%% FLOATS AND CAPTIONS
+%%%------------------------------------------------------------------------
+
+% You do not need to write [htpb] all the time
+\renewcommand\fps@figure{htbp}
+\renewcommand\fps@table{htbp}
+
+\captiondelim{\space } % A space between caption name and text
+\captionnamefont{\small\bfseries} % Font of the caption name
+\captiontitlefont{\small\normalfont} % Font of the caption text
+
+\changecaptionwidth % Change the width of the caption
+\captionwidth{1\textwidth}
+
+%%% ABSTRACT
+%%%------------------------------------------------------------------------
+
+\renewcommand{\abstractnamefont}{\normalfont\small\bfseries} % Abstract title
+\setlength{\absleftindent}{0.1\textwidth} % Width of abstract
+\setlength{\absrightindent}{\absleftindent}
+
+\tightlists
+
+%%% HEADER AND FOOTER
+%%%------------------------------------------------------------------------
+
+
+
+%%% END NOTES
+%%%------------------------------------------------------------------------
+\makepagenote
+\continuousnotenums
+\notepageref
+
+\let\oldpagenote\pagenote%
+  \renewcommand{\pagenote}[1]{%
+  {\,\oldpagenote{#1}}}
+
+\RequirePackage[perpage, symbol*]{footmisc}
+\setfnsymbol{wiley}
+
+\renewcommand{\noteidinnotes}[2]{%
+  \hspace{9mm}\textsuperscript{#1}\hspace{1.5mm}}
+\renewcommand{\pageinnotes}[1]{%
+  К~\hyperref[#1]{стр.~\pageref*{#1}.} ---}
+
+\renewcommand*{\footnoterule}{%
+  \kern-3pt%
+  \hrule width 0.17\columnwidth
+  \kern 2.6pt
+  \vspace{1mm}}
+
+\renewcommand*{\notedivision}{}
+
+\renewcommand*{\pagenotesubhead}[3]{}
+
+\renewcommand*{\pagenotesubheadstarred}[3]{}
+
+%%% TEXT
+%%%------------------------------------------------------------------------
+
+%\renewcommand{\baselinestretch}{0.82}
+%\setPagenoteSpacing{0.82}
+%\setFloatSpacing{0.82}
+
+\indentafterchapter
+\setlength\parindent{1.5em}
+\setlength\parskip{0.5\baselineskip}
+
+
+%%% NEW COMMANDS
+%%%------------------------------------------------------------------------
+
+\newcommand{\hm}[1]{#1\nobreak\discretionary{}{\hbox{\ensuremath{#1}}}{}}
+
+\maxtocdepth{subparagraph} % ToC depth
+\settocdepth{subparagraph}
+\addto\captionsrussian{\renewcommand{\contentsname}{ОГЛАВЛЕНИЕ}}
+\setlength{\cftbeforepartskip}{0.5mm}
+\setlength{\cftbeforesectionskip}{0.45\baselineskip}
+\setlength{\cftbeforesubsectionskip}{0.2\baselineskip}
+
+
+\AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
+
+\RequirePackage{hyperref}   % Internal hyperlinks
+\RequirePackage{memhfixc}
+
+\renewcommand{\cftchapterdotsep}{\cftdotsep} % Chapter dots in ToC
+\renewcommand{\cftpartdotsep}{\cftdotsep}
+\setlength{\cftpartindent}{42mm}
+
+\cftpagenumbersoff{book}
+\renewcommand*{\cftbookfont}{\hfil}
+\renewcommand*{\cftbookafterpnum}{\hfil}
+
+% разделитель абзацев - короткая линия по центру
+\newcommand{\sectionline}{%
+  {\centering \raisebox{0pt}[1.5ex][1.5ex]{\rule{0.9cm}{0.4pt}} \par}
+}
+
+\newcommand*{\singlegreek}[1]{%
+\ifcase #1\or\textalpha\or\textbeta\or\textgamma\or\textdelta\or\textepsilon%
+\or\textzeta\or\texteta\or\texttheta\or\textiota\or\textkappa\or\textlambda%
+\or\textmu\or\textnu\or\textxi\or o\or\textpi\or\textvarrho\or\textsigma%
+\or\texttau\or\textupsilon\or\textphi\or\textchi\or\textpsi\or\textomega%
+\else\@ctrerr\fi
+}
+\newcommand*{\rufemOrdinal}[1]{%
+\ifcase #1\or{Первая}\or{Вторая}\or{Третья}\or{Четвёртая}\or{Пятая}\or{Шестая}%
+\or{Седьмая}\or{Восьмая}\or{Девятая}\or{Десятая}\else#1\fi%
+}
+\newcommand*{\rumaleOrdinal}[1]{%
+\ifcase #1\or{Первый}\or{Второй}\or{Третий}\or{Четвёртый}\or{Пятый}\or{Шестой}%
+\or{Седьмой}\or{Восьмой}\or{Девятый}\or{Десятый}\else#1\fi%
+}
+
+\endinput
