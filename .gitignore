@@ -5,3 +5,4 @@
 *.idx
 *.ent
 *.tex.swp
+.DS_Store
